@@ -1,0 +1,5055 @@
+<!DOCTYPE html>
+<html>
+<head>
+<TITLE>Ai Software srl CONT TEST VERSION_KIT.JS</TITLE><meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="Rating" content="" />
+<meta name="robots" content="all" />
+<meta name="AUTHOR" type="email" content="Ai Software srl CONT TEST" />
+<meta name="COPYRIGHT" content="Ai Software srl CONT TEST" />
+<meta name="revisit-after" CONTENT="10 days" />
+<meta name="LASTUPDATE" content="October 4, 2025, 5:05 pm" />
+<meta name="SECURITY" content="Public" />
+<meta name="keywords" content="asigurari, rca, casco, medicale calatorie, malpraxis, locuinte, rotr, rca ieftin, broker de asigurare, asiguratori">
+<meta name="description" content="Ai Software srl CONT TEST" />
+<meta name="verify-v1" content="" />
+<link rel='manifest' href='https://kit5.asiguram.ro/manifest.php' />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" href="https://kit5.asiguram.ro/version_kit.js" />
+<script type="text/javascript">
+
+function getLocalData(s,d)
+{
+ return localStorage.getItem(s) || d;
+}
+function getLocalInt(s,d)
+{
+ var l=getLocalData(s,'');
+ if(l=='') return d;
+ return parseInt(l,10);
+}
+function setLocalData(s,d)
+{
+ if(d && d!="")
+ 	localStorage.setItem(s,d);
+ else
+	 localStorage.removeItem(s);
+}
+
+
+var tinyMCE;tinyMCE=false;var myNicEditor;myNicEditor=false;var currentPageProtection;currentPageProtection=0;var sessionmaster='';
+  function activateAnim(el,x) {
+    $(el).removeClass('animated').addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass('animated');
+    });
+  };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-form@4.3.0/dist/jquery.form.min.js" integrity="sha256-3TKcZElR88BBIA6CeePJAGOsW1yIYf4lP8pI333YuZw=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/tether@2.0.0/dist/js/tether.min.js" integrity="sha256-cExSEm1VrovuDNOSgLk0xLue2IXxIvbKV1gXuCqKPLE=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.compat.css" integrity="sha256-ru6hde/8yosp0lQGTaEV6kIpnngqTkn4P2qCQmZ46UM=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<style>
+  .bs-divider {
+  height: 2em;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.text-readable{
+	  letter-spacing: 0.2em;
+  }
+#talontable  tr td:nth-child(-n+2)
+{
+	background-color: #efeffe;
+}
+#talontable tr td:nth-child(n+3)
+{
+	background-color: #efedbe;
+}
+#talontable  tr td:nth-child(2n+1)
+{
+	font-weight: bold;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+      background: transparent;
+      bottom: 0;
+      color: transparent;
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+  }
+.form-label
+{
+	font-weight:bold;
+	font-style:italic;
+}
+.bg-warning,.bg-info
+{
+	color: black;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+<script src="extern/qrcode.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/pica@9.0.1/dist/pica.min.js" integrity="sha256-HwmH+KLpz2mTymuyH/NLVmALSvbjnEYpC4nfVazaK3A=" crossorigin="anonymous"></script>
+<script>
+(() => {
+  'use strict'
+
+  var storedTheme = localStorage.getItem('theme')
+
+  const getPreferredTheme = () => {
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = function (theme) {
+    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (storedTheme !== 'light' || storedTheme !== 'dark') {
+      setTheme(getPreferredTheme());
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+	const activeThemeIcon = document.getElementById('bd-theme');
+	if(activeThemeIcon)
+	activeThemeIcon.addEventListener("click",function(ev){
+		if(storedTheme=="" || storedTheme=="light")
+			storedTheme='dark';
+		else
+			storedTheme='light';
+		localStorage.setItem('theme',storedTheme);
+		setTheme(getPreferredTheme());
+	});
+  })
+})()
+</script>
+<script type="text/javascript">
+function textareaImplode(name)
+{
+	var alltxt='';
+	var allfi=true;
+	$('.'+name+'_implode').each(function()
+	{
+		if($(this).val()!='')
+		{
+			if(!allfi) alltxt+=', ';
+			allfi=false;
+			alltxt+=$(this).attr('label')+'. '+$(this).val();
+		}
+	});
+	alltxt=alltxt.toUpperCase();
+	$('textarea[name='+name+']').html(alltxt);
+	$('textarea[name='+name+']').val(alltxt);
+}
+</script>
+<script type="text/javascript" src="js/layers.js"></script>
+<SCRIPT LANGUAGE="JavaScript" SRC="js/CalendarPopup.js?1"></SCRIPT><script>
+function showNumberWith2Degits(n)
+{
+	if(n<10) return "0"+n;
+	return n;
+}
+function calendarAutomaticCalculateEndDate(data1,months,dateformat)
+{
+	if(data1=="") return "";
+	if(months=="") return "";
+	var d;
+	var date2="";
+	var arr;
+	months=parseInt(months);
+	switch(dateformat)
+	{
+		case '%e/%m/%Y':
+		case 'au':
+		case 'dd/MM/yyyy':
+			arr=data1.split('/');
+			d = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+			d.setMonth(d.getMonth()+months);
+			d.setDate(d.getDate()-1);
+			date2=""+showNumberWith2Degits(d.getDate())+"/"+showNumberWith2Degits(d.getMonth()+1)+"/"+d.getFullYear();
+			break;
+		case '%m/%e/%Y':
+		case 'monthly':
+		case 'mm':
+		case 'en':
+		case 'MM/dd/yyyy':
+			arr=data1.split('/');
+			d = new Date(arr[2], parseFloat(arr[0])-1, arr[1]);
+			d.setMonth(d.getMonth()+months);
+			d.setDate(d.getDate()-1);
+			date2=""+showNumberWith2Degits(d.getMonth()+1)+"/"+showNumberWith2Degits(d.getDate())+"/"+d.getFullYear();
+			break;
+		case '%e.%m.%Y':
+		case 'daily':
+		case 'dd':
+		case 'ro':
+		case 'dd.MM.yyyy':
+			arr=data1.split('.');
+			d = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+			d.setMonth(d.getMonth()+months);
+			d.setDate(d.getDate()-1);
+			date2=""+showNumberWith2Degits(d.getDate())+"."+showNumberWith2Degits(d.getMonth()+1)+"."+d.getFullYear();
+			break;
+	}
+	return date2;
+}
+function calendarAutomaticDays(data1,days,dateformat)
+{
+	if(data1=="") return "";
+	if(days=="") return data1;
+	if(isNaN(parseInt(days)) || parseInt(days)<1) return data1;
+	var d;
+	var date2="";
+	var arr;
+	days=parseInt(days);
+	if(days==0) return data1;
+	switch(dateformat)
+	{
+		case '%e/%m/%Y':
+		case 'au':
+		case 'dd/MM/yyyy':
+			arr=data1.split('/');
+			d = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+			d.setDate(d.getDate()+days-1);
+			date2=""+showNumberWith2Degits(d.getDate())+"/"+showNumberWith2Degits(d.getMonth()+1)+"/"+d.getFullYear();
+			break;
+		case '%m/%e/%Y':
+		case 'monthly':
+		case 'mm':
+		case 'en':
+		case 'MM/dd/yyyy':
+			arr=data1.split('/');
+			d = new Date(arr[2], parseFloat(arr[0])-1, arr[1]);
+			d.setDate(d.getDate()+days-1);
+			date2=""+showNumberWith2Degits(d.getMonth()+1)+"/"+showNumberWith2Degits(d.getDate())+"/"+d.getFullYear();
+			break;
+		case '%e.%m.%Y':
+		case 'daily':
+		case 'dd':
+		case 'ro':
+		case 'dd.MM.yyyy':
+			arr=data1.split('.');
+			d = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+			d.setDate(d.getDate()+days-1);
+			date2=""+showNumberWith2Degits(d.getDate())+"."+showNumberWith2Degits(d.getMonth()+1)+"."+d.getFullYear();
+			break;
+	}
+	return date2;
+}
+</script>
+<STYLE>
+	a.cpCurrentMonthDate,a.cpCurrentDate,a.cpOtherMonthDate
+	{
+		display:block;padding:3px;
+	}
+	a.cpCurrentMonthDate
+	{
+		color:black;
+	}
+	a.cpCurrentDate
+	{
+		color:white;
+	}
+	td.cpCurrentMonthDate,td.cpOtherMonthDate
+	{
+		border:solid thin #EEDDDD;text-align: center;
+	}
+	TD.cpCurrentDate
+	{
+		color:#FFFFFF;
+		background-color: #6677DD;
+		border-width:1;
+		border:solid thin #000000;text-align: center;
+	}
+	td.cpDayColumnHeader
+	{
+		text-align:center;padding:7px;
+		background-color:#6677DD;
+	}
+	.cpYearNavigation,
+	.cpMonthNavigation
+	{
+		background-color:#6677DD;
+		text-align:center;
+		vertical-align:middle;
+		text-decoration:none;
+		color:#FFFFFF;
+		font-weight:bold;
+	}
+	.cpCurrentMonthDateDisabled,
+	.cpOtherMonthDateDisabled,
+	.cpCurrentDateDisabled
+	{
+		color:#D0D0D0;
+		text-align:right;
+		text-decoration:line-through;
+	}
+	
+div.datepicker {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 216px;
+	height: 167px;
+	position: absolute;
+	cursor: default;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.datepickerContainer {
+	background: ;
+	border:solid 1px ;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding:4px;
+}
+.datepickerBorderT {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	right: 10px;
+	height: 10px;
+}
+.datepickerBorderB {
+	position: absolute;
+	left: 10px;
+	bottom: 0;
+	right: 10px;
+	height: 10px;
+}
+.datepickerBorderL {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+}
+.datepickerBorderR {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+}
+.datepickerBorderTL {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+}
+.datepickerBorderTR {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+}
+.datepickerBorderBL {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+}
+.datepickerBorderBR {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+}
+.datepickerHidden {
+	display: none;
+}
+div.datepicker table {
+	border-collapse:collapse;
+}
+div.datepicker a {
+	color: #222;
+	text-decoration: none;
+	cursor: default;
+	outline: none;
+}
+div.datepicker span
+{
+	font-size:13px;
+}
+div.datepicker table td {
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+div.datepicker th {
+	text-align: center;
+	color: ;
+	font-weight: normal;
+}
+div.datepicker tbody th {
+	text-align: left;
+}
+div.datepicker tbody a {
+	display: block;
+}
+.datepickerDays a {
+	width: 20px;
+	line-height: 16px;
+	height: 16px;
+	padding-right: 2px;
+}
+.datepickerYears a,
+.datepickerMonths a{
+	width: 44px;
+	line-height: 36px;
+	height: 36px;
+	text-align: center;
+}
+
+td.datepickerNotInMonth a {
+	color: ;
+}
+tbody.datepickerDays td.datepickerSelected{
+	background: ;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+	background:;
+}
+tbody.datepickerYears td.datepickerSelected,
+tbody.datepickerMonths td.datepickerSelected{
+	background: ;
+}
+div.datepicker a:hover,
+div.datepicker a:hover {
+	color: black;
+	background: ;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+	color: #222;
+}
+div.datepicker tbody th {
+	text-align: left;
+}
+.datepickerSpace div {
+	width: 20px;
+}
+.datepickerGoNext a,
+.datepickerGoPrev a,
+.datepickerMonth a {
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+}
+.datepickerGoNext a {
+	float: right;
+	width: 20px;
+}
+.datepickerGoPrev a {
+	float: left;
+	width: 20px;
+}
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+	display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+	display: none;
+}
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+	display: none;
+}
+td.datepickerDisabled a,
+td.datepickerDisabled.datepickerNotInMonth a{
+	color: #ccc;
+}
+td.datepickerDisabled a:hover {
+	color: #ccc;
+}
+td.datepickerSpecial a {
+	background: ;
+}
+td.datepickerSpecial.datepickerSelected a {
+	background: ;
+}
+th.datepickerWeek span
+{
+	color: ;
+}
+</STYLE>
+<script type="text/javascript" src="js/blockenter.js"></script>
+<script type="text/javascript" src="js/autocomplete.js"></script>
+<script>
+document.globalSlotReloaded="";
+document.globalSlotLoading="";
+var ajaxifyHistory=false;
+var ajaxifyHistoryTimer=false;
+var ajaxifyHistoryUrls=new Array();
+var ajaxifyHistorySlots=new Array();
+var ajaxifyHistoryCurrent=0;
+var ajaxifyHistoryBase=0;
+var ajaxifyHistoryMax=20;
+var ajaxifyHistorySkip=0;
+var ajaxifyEnableFocus=1;
+document.ajaxifyDefaultSlot="work";
+function getDivName(url)
+{
+	if(!url) return '';
+	if(url.indexOf("?")>=0)
+	{
+		pos=url.indexOf("s=");
+		if(pos>=0)
+		{
+			url=url.slice(pos+2);
+
+			pos=url.indexOf("&");
+			if(pos>=0)
+			{
+				url=url.slice(0,pos);
+				return url;
+			}
+			pos=url.indexOf("#");
+			if(pos>=0)
+			{
+				url=url.slice(0,pos);
+				return url;
+			}
+
+			return url;
+		}
+		pos=url.indexOf("change=");
+		if(pos>=0)
+		{
+			url=url.slice(pos+7);
+			pos=url.indexOf("&");
+			if(pos>=0)
+			{
+				url=url.slice(0,pos);
+				return url;
+			}
+			pos=url.indexOf("#");
+			if(pos>=0)
+			{
+				url=url.slice(0,pos);
+				return url;
+			}
+			return url;
+		}
+	}
+	return document.ajaxifyDefaultSlot;
+
+}
+function getAjaxParameters()
+{
+	return "&ajax=1&protection="+currentPageProtection+'&sm='+sessionmaster;
+}
+function getUrlNoDie(url)
+{
+	if(url.indexOf("#")>=0)
+	{
+		url=url.substr(0,url.indexOf("#"));
+		return url+getAjaxParameters();
+	}
+	if(url.indexOf("?")>=0)
+		return url+getAjaxParameters();
+	return url+'?s='+document.ajaxifyDefaultSlot+getAjaxParameters();
+}
+function getUrlNoParas(url)
+{
+	var firstone=-1;
+	if(url.indexOf("?")>=0)
+	{
+		firstone=url.indexOf("?");
+	}
+	if(url.indexOf("#")>=0)
+	{
+		if(firstone>=0 && url.indexOf("#")>firstone)
+			return url.substr(0,url.indexOf("?"));
+		return url.substr(0,url.indexOf("#"));
+	}
+	if(firstone>=0)
+	{
+		return url.substr(0,url.indexOf("?"));
+	}
+	return url;
+}
+function getUrlNoAnchor(url)
+{
+	if(url.indexOf("#")>=0)
+	{
+		url=url.substr(0,url.indexOf("#"));
+		return url;
+	}
+	return url;
+}
+function getUrlAnchorName(url)
+{
+	if(url.indexOf("#")>=0)
+	{
+		url=url.substr(url.indexOf("#")+1);
+		return url;
+	}
+	return "";
+}
+function getUrlForSlotAndAjax(oldurl)
+{
+	var newurl=getUrlNoAnchor(oldurl);
+	var slot=getDivName(oldurl);
+	if(newurl.indexOf("?")>=0)
+	{
+		if(newurl.indexOf("change=")>=0 || newurl.indexOf("s=")>=0)
+		{
+			newurl=getUrlNoParas(location.href);
+			newurl+="?s="+slot+getAjaxParameters();
+		}
+		else
+			newurl+="&s="+slot+getAjaxParameters();
+	}
+	else
+	{
+		newurl+="?s="+slot+getAjaxParameters();
+	}
+	return newurl;
+}
+function toAjaxHistoryBack()
+{
+	var newposition=parseInt(getUrlAnchorName(location.href))-1;
+	if(newposition>0 && ajaxifyHistorySkip==0)
+	{
+		location.href=getUrlNoAnchor(location.href)+"#"+newposition;
+		checkForAjaxifyBackForwardButtons();
+	}
+	else
+	{
+		if(ajaxifyHistorySkip) ajaxifyHistorySkip--;
+	}
+}
+function checkForAjaxifyBackForwardButtons()
+{
+	if(getUrlAnchorName(location.href)!="")
+	{
+		var newposition=parseInt(getUrlAnchorName(location.href));
+		if((newposition+1)!=ajaxifyHistoryCurrent)
+		{
+			if((newposition-ajaxifyHistoryBase)>=0 && (newposition-ajaxifyHistoryBase)<ajaxifyHistorySlots.length)
+			{
+				var slot=ajaxifyHistorySlots[newposition-ajaxifyHistoryBase];
+				if(document.globalSlotLoading!="") eval(""+document.globalSlotLoading+"('"+slot+"');");
+				else $("div[id="+slot+"]").prepend('<img src="images/loading.gif">');
+				ajaxifyHistoryCurrent=newposition+1;
+				$.get(ajaxifyHistoryUrls[newposition-ajaxifyHistoryBase],function(data){
+					if(data.substr(0,9)=="redirect:")
+					{
+						parent.location.href=data.substr(9);
+						return;
+					}
+					if(data.substr(0,6)=="error:")
+					{
+						showGlobalError(data.substr(6));
+						return;
+					}
+					if(data.substr(0,7)=="reload:")
+					{
+						location.reload();
+						return;
+					}
+					if(data.substr(0,5)=="slot:")
+					{
+						var arr=data.indexOf("$");
+						slot=data.substr(5,arr-5);
+						$("div[id="+slot+"]").html(data.substr(arr+1));
+					}
+					else
+					{
+						$("div[id="+slot+"]").html(data);
+					}
+					reloadLinks(slot);
+					if(document.globalSlotReloaded!="") eval(""+document.globalSlotReloaded+"('"+slot+"');");
+				});
+			}
+		}
+	}
+	setTimeout("checkForAjaxifyBackForwardButtons();",300);
+}
+function initAjaxifyHistory()
+{
+	ajaxifyHistory=true;
+	if(history.pushState)
+	{
+		$(window).bind('popstate', function (event)
+		{
+			var myurl = event.originalEvent.state;
+			if(!myurl) return;
+				var slot=getDivName(myurl);
+				if(document.globalSlotLoading!="") eval(""+document.globalSlotLoading+"('"+slot+"');");
+				else $("div[id="+slot+"]").prepend('<img src="images/loading.gif">');
+				$.get(myurl,function(data){
+					if(data.substr(0,9)=="redirect:")
+					{
+						parent.location.href=data.substr(9);
+						return;
+					}
+					if(data.substr(0,6)=="error:")
+					{
+						showGlobalError(data.substr(6));
+						return;
+					}
+					if(data.substr(0,7)=="reload:")
+					{
+						location.reload();
+						return;
+					}
+					if(data.substr(0,5)=="slot:")
+					{
+						var arr=data.indexOf("$");
+						slot=data.substr(5,arr-5);
+						$("div[id="+slot+"]").html(data.substr(arr+1));
+					}
+					else
+					{
+						$("div[id="+slot+"]").html(data);
+					}
+
+					reloadLinks(slot);
+					if(document.globalSlotReloaded!="") eval(""+document.globalSlotReloaded+"('"+slot+"');");
+				});
+		});
+		//addEvent(window, 'hashchange', function (event) {});
+		//addEvent(window, 'pageshow', function (event) {});
+		//addEvent(window, 'pagehide', function (event) {});
+
+	}
+}
+function reajaxifyHistory()
+{
+	if((ajaxifyHistoryCurrent-ajaxifyHistoryBase)>ajaxifyHistoryMax)
+	{
+		for(i=0;i<ajaxifyHistoryMax;i++)
+		{
+			ajaxifyHistoryUrls[i]=ajaxifyHistoryUrls[i+1];
+			ajaxifyHistorySlots[i]=ajaxifyHistorySlots[i+1];
+		}
+		ajaxifyHistoryBase++;
+	}
+}
+function redirectClick(alink)
+{
+	var slot;
+	slot=getDivName(alink.attr("href"));
+	$("a.option").removeClass("selected");alink.addClass("selected");
+	if(ajaxifyHistory)
+	{
+		if(history.pushState && !window.nocopylink)
+		{
+			history.pushState(getUrlNoDie(alink.attr("href")),null,alink.attr("href"));
+		}
+		else
+		{
+			if(!ajaxifyHistoryTimer) setTimeout("checkForAjaxifyBackForwardButtons();",200);
+			ajaxifyHistoryTimer=true;
+			reajaxifyHistory();
+			ajaxifyHistoryUrls[ajaxifyHistoryCurrent-ajaxifyHistoryBase]=getUrlNoDie(alink.attr("href"));
+			ajaxifyHistorySlots[ajaxifyHistoryCurrent-ajaxifyHistoryBase]=slot;
+			location.href=getUrlNoAnchor(location.href)+"#"+ajaxifyHistoryCurrent+(window.nocopylink?'':'-go-'+alink.attr("href"));
+			ajaxifyHistoryCurrent++;
+		}
+	}
+	else
+	{
+		location.href=getUrlNoAnchor(location.href)+"#"+slot+(window.nocopylink?'':'-go-'+alink.attr("href"));
+	}
+	if(document.globalSlotLoading!="") eval(""+document.globalSlotLoading+"('"+slot+"');");
+	else $("div[id="+slot+"]").prepend('<img src="images/loading.gif">');
+	$.get(getUrlNoDie(alink.attr("href")),function(data){
+		if(data.substr(0,9)=="redirect:")
+		{
+			parent.location.href=data.substr(9);
+			return;
+		}
+		if(data.substr(0,6)=="error:")
+		{
+			showGlobalError(data.substr(6));
+			return;
+		}
+		if(data.substr(0,7)=="reload:")
+		{
+			location.reload();
+			return;
+		}
+		if(data.substr(0,5)=="slot:")
+		{
+			var arr=data.indexOf("$");
+			slot=data.substr(5,arr-5);
+			$("div[id="+slot+"]").html(data.substr(arr+1));
+		}
+		else
+		{
+			$("div[id="+slot+"]").html(data);
+		}
+		reloadLinks(slot);
+		if(document.globalSlotReloaded!="") eval(""+document.globalSlotReloaded+"('"+slot+"');");
+	})
+	return false;
+}
+document.GlobalReloadSlot="";
+function checkSlots()
+{
+	var slot;
+	if(document.GlobalReloadSlot!="")
+	{
+		var pos=document.GlobalReloadSlot.indexOf("$");
+		while(pos>=0)
+		{
+			slot=document.GlobalReloadSlot.substring(1,pos);
+			if(document.GlobalReloadSlot==document.GlobalReloadSlot.replace(RegExp(","+slot+"\\$","gi"), ""))
+			{
+				//error
+			}
+			else
+			{
+				document.GlobalReloadSlot=document.GlobalReloadSlot.replace(RegExp(","+slot+"\\$","gi"), "");
+				var newurl;
+				newurl=getUrlNoParas(location.href);
+				newurl+="?s="+slot+getAjaxParameters();
+
+				$.get(newurl,function(data){
+					if(data.substr(0,9)=="redirect:")
+					{
+						parent.location.href=data.substr(9);
+						return;
+					}
+					if(data.substr(0,6)=="error:")
+					{
+						showGlobalError(data.substr(6));
+						return;
+					}
+					if(data.substr(0,7)=="reload:")
+					{
+						location.reload();
+						return;
+					}
+					if(data.substr(0,5)=="slot:")
+					{
+						var arr=data.indexOf("$");
+						slot=data.substr(5,arr-5);
+						$("div[id="+slot+"]").html(data.substr(arr+1));
+					}
+					else
+					{
+						$("div[id="+slot+"]").html(data);
+					}
+					reloadLinks(slot);
+					if(document.globalSlotReloaded!="") eval(""+document.globalSlotReloaded+"('"+slot+"');");
+					});
+			}
+			pos=document.GlobalReloadSlot.indexOf("$");
+		}
+	}
+	else
+	{
+		//wait for more
+		//setTimeout("checkSlots()",100);
+	}
+}
+//setTimeout("checkSlots()",200);
+function reloadSlot(slot)
+{
+	document.GlobalReloadSlot+=","+slot+"$";
+	checkSlots();
+}
+function iframeLoadedStep1()
+{
+	$("iframe.loaditin").each(function(){
+		if(frames[$(this).attr("name")].document.getElementsByTagName('textarea')[0])
+		{
+			$(this).attr("class","freeloaditin");
+			data=frames[$(this).attr("name")].document.getElementsByTagName('textarea')[0].value;
+			eval(data);
+		}
+		else
+		{
+			setTimeout("iframeLoadedStep1()",200);
+		}
+	});
+}
+function iframeLoaded() {
+	setTimeout("iframeLoadedStep1()",0);
+}
+function showGlobalError(error)
+{
+	if(typeof(alerterror)!="undefined") alerterror(error);
+	else alert(error);
+}
+function redirectSubmits(fo)
+{
+	var slot;
+	if(fo.attr("callmefirst") && fo.attr("callmefirst")!="")
+	{
+		var ret=window[fo.attr("callmefirst")](fo);
+		if(!ret) return false;
+	}
+	if(fo.attr("action")=="" || fo.attr("action")==undefined)
+		fo.attr("action",location.href);
+	slot=getDivName(fo.attr("action"));
+	if(fo.attr("target")!=undefined && fo.attr("target")!='')
+	{
+		return false;
+	}
+	if(slot!="")
+	{
+		//ajaxify
+		//loding progress
+		if(document.globalSlotLoading!="") eval(""+document.globalSlotLoading+"('"+slot+"');");
+		else $("div[id="+slot+"]").prepend('<img src="images/loading.gif">');
+
+		//create new target
+		if(tinyMCE) tinyMCE.triggerSave();
+		var newaction_=getUrlForSlotAndAjax(fo.attr("action"));
+		fo.attr("action",newaction_);
+		return true;
+	}
+	if(tinyMCE) tinyMCE.triggerSave();
+	return true;
+}
+
+function processFormData(f)
+{
+	if($(f).hasClass("freeform")) return true;
+	var funt=undefined;
+	if($(f).attr("onsubmit")!=undefined)
+	if($(f).attr("onsubmit").substr(0,24)=="javascript:var f;f=this;")
+	{
+		eval("funt=function(f){"+$(f).attr("onsubmit").substr(24)+"return true;}");
+		$(f).attr("onsubmit","");
+	}
+	else
+	if($(f).attr("onsubmit").substr(0,33)=="javascript:var f;f=this.elements;")
+	{
+		eval("funt=function(f){f=f.elements;"+$(f).attr("onsubmit").substr(33)+"return true;}");
+		$(f).attr("onsubmit","");
+	}
+	$("input[type=submit]",f).click(formSubmittingElement);
+	if(typeof(funt)!="undefined") $(f).data("callmeonsubmit",funt);
+	$(f).unbind("submit").submit(function(e){
+		var funt=$(this).data("callmeonsubmit");
+		if((typeof(funt)=="undefined") || funt($(this)[0]))
+		{
+			var ret=redirectSubmits($(this));
+			if(ret)
+			{
+				$(this).ajaxSubmit({success:function(d){
+					$("#evaluator").html(d);
+					eval($("#evaluator textarea").val());
+				}}); 
+				return false;
+			}
+			if(!$(this).attr("callmefirst")) return true;
+			if($(this).attr("target")) return true;
+			return false;
+		}
+		return false;
+	});
+}
+
+function reloadLinks(slot)
+{
+	if(slot=="")
+	{
+		$("a.option").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("a.listorder").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("a.menu").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("a.selmenu").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("form").each(function(){
+				processFormData(this);
+			});
+		$("table.sheet").each(function(){
+			var elname=$(this).attr("id");
+			$("#"+$(this).attr("id")+" tr td input").unbind("keydown").bind("keydown",function(){
+				$(this).autoGrowInput({comfortZone:20});
+				checkSheetBounderies($(this),elname);
+			});
+		});
+	}
+	else
+	{
+		$("#"+slot+" a.option").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("#"+slot+" a.listorder").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("#"+slot+" a.menu").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("#"+slot+" a.selmenu").unbind("click").click(function(){
+			return redirectClick($(this));
+			});
+		$("#"+slot+" form").each(function(){
+				processFormData(this);
+			});
+		$("#"+slot+" table.sheet").each(function(){
+			var elname=$(this).attr("id");
+			$("#"+$(this).attr("id")+" tr td input").unbind("keydown").bind("keydown",function(){
+				$(this).autoGrowInput({comfortZone:20});
+				checkSheetBounderies($(this),elname);
+			});
+		});
+	}
+
+	if(ajaxifyEnableFocus) loadAllHandler();
+	if(slot!="")
+	{
+		if(tinyMCE)
+		{
+			tinyMCE.idCounter=0;
+			$("textarea[mce_editable=true]").each(function(){
+				tinyMCE.execCommand('mceAddControl', false, $(this).attr("id"));
+				$(this).attr("mce_editable","false");
+				});
+		}
+		if(myNicEditor)
+		{
+			$("textarea[mce_editable=true]").each(function(){
+				$(this).attr("mce_editable","false");
+				var instance=myNicEditor.panelInstance($(this).attr("id"));
+				instance.addEvent("blur",function(){
+					$.each(instance.nicInstances,function(idx,el){
+						el.saveContent();
+					});
+				});
+			});
+		}
+	}
+
+}
+function reloadImages()
+{
+	$("img.imgonover").hover(function(){
+		if($(this).attr("offsrc")==undefined)
+			$(this).attr("offsrc",$(this).attr("src"));
+		$(this).attr("src",$(this).attr("onsrc"));
+	},function(){
+		$(this).attr("src",$(this).attr("offsrc"));
+	});
+}
+function reloadGmaps(fromdiv)
+{
+	$(""+fromdiv).each(function(){
+		eval("loadMap"+$(this).attr("mapname")+"()");
+	});
+}
+function reloadAutocomplete()
+{
+	var mm="no";
+	$("input.autocompletefield").each(function(){
+		$(this).unautocomplete().autocomplete("blank.php?lk=no", {
+		minChars: $(this).attr("minChars")==""?1:$(this).attr("minChars"),
+		width: 310,
+		matchContains: "word",
+		autoFill: true,
+		selectFirst: false,
+		takeparas: $(this).attr("takeparas"),
+		mustMatch: $(this).attr("mustmatch")=="yes"?true:false,
+		formatItem: function(row, i, max) {
+			if(!row.faravaloare) row.showText=row.name.replace("&amp;","&");else row.showText='';
+			return row.name;
+		},
+		formatResult: function(row) {
+			if(row && !row.faravaloare)
+			{
+				return row.name;
+			}
+			return '';
+		}
+		}).unbind("result").bind("result",function(input,cl){
+			if($(this).val()=='') return true;
+			var f=$(this)[0].form;
+			var shouldBlank=false;
+			var doubleItem=false;
+			if(cl && cl.fields)
+			{
+				$.each(cl.fields, function(i,item){
+					if(f[item.field]) 
+					switch(item.value)
+					{
+						case 'checked': f[item.field].checked=true;
+						break;
+						case 'unchecked': f[item.field].checked=false;
+						break;
+						default:
+							$(f[item.field]).val(item.value).change();
+							var nextdel=false;
+							$("input.autocompletecase").each(function(){
+								var rlk=$(this).attr("lk");
+								if($(this).attr("lk"+item.field) && $(this).attr("lk"+item.field)!="") rlk=$(this).attr("lk"+item.field);
+								else $(this).attr("lk"+item.field,rlk);
+								rlk=rlk.replace("["+item.field+"]",""+item.value);
+								$(this).attr("lk",rlk);
+								if(nextdel && $("input.autocompletefield[lk"+$(this).attr("name")+"]").length)
+								{
+									$(this).val('');
+									$("input.autocompletefield[lk"+$(this).attr("name")+"]").attr("lk"+$(this).attr("name"),"");
+								}
+								if($(this).attr("name")==item.field)
+								{
+									nextdel=true;
+								}
+							});
+						break;
+					}
+				});
+			}
+			if(cl && cl.add)
+			{
+				$.each(cl.add, function(i,item){
+					if(f[item.field])
+					{
+						var toadd;
+						var tocheck=$(f[item.field]).val();
+						var arr=tocheck.split(",");
+						var i;
+						for(i in arr)
+						{
+							if(arr[i]==item.value) doubleItem=true;
+						}
+						if(!doubleItem)
+						{
+							toadd='';
+							if($(f[item.field]).val()!='') toadd=',';
+							toadd+=''+item.value;
+							$(f[item.field]).val($(f[item.field]).val()+toadd);
+						}
+					}
+					shouldBlank=true;
+				});
+			}
+			if(cl && cl.append && !doubleItem)
+			{
+				$.each(cl.append, function(i,item){
+					if(item.id) $('#'+item.id).append(item.value+"<br>");
+					if(item.other) $(item.other).append(item.value+"<br>");
+				});
+			}
+			if(cl && cl.html)
+			{
+				$.each(cl.html, function(i,item){
+					if(item.id) $('#'+item.id).html(item.value);
+					if(item.other) $(item.other).html(item.value);
+				});
+			}
+			if(cl && cl.niceditor)
+			{
+				$.each(cl.niceditor, function(i,item){
+					nicEditors.findEditor(item.field).setContent(item.value);
+				});
+			}
+			if(shouldBlank) {$(this).val('');}
+	});
+	});
+}
+function formSubmittingElement(e) {
+    /*jshint validthis:true */
+    var target = e.target;
+    var $el = $(target);
+    if (!($el.is("[type=submit],[type=image]"))) {
+        // is this a child element of the submit el?  (ex: a span within a button)
+        var t = $el.closest('[type=submit]');
+        if (t.length === 0) {
+            return;
+        }
+        target = t[0];
+    }
+    var form = e.target.form;
+    form.clk = target;
+    if (target.type == 'image') {
+        if (e.offsetX !== undefined) {
+            form.clk_x = e.offsetX;
+            form.clk_y = e.offsetY;
+        } else if (typeof $.fn.offset == 'function') {
+            var offset = $el.offset();
+            form.clk_x = e.pageX - offset.left;
+            form.clk_y = e.pageY - offset.top;
+        } else {
+            form.clk_x = e.pageX - target.offsetLeft;
+            form.clk_y = e.pageY - target.offsetTop;
+        }
+    }
+    // clear form vars
+    //setTimeout(function() { form.clk = form.clk_x = form.clk_y = null; }, 100);
+}
+function alerterror(err){
+alert(err);
+$("#loading").hide();
+$("#overlay").hide();
+}
+</script>
+		<script type="text/javascript" src="js/jquery.autocomplete.js?1"></script>
+		
+			<style>.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	overflow: hidden;
+	text-align:left;
+	text-shadow:none;
+	color:black;
+}
+
+.ac_loading {
+	background: white url('images/loading.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #fff;
+}
+
+li.ac_over{
+	background-color: #0A246A;
+	color: white;
+}
+</style>
+			<script>
+function select_findIndex(el,n)
+{
+	if(!el) return 0;
+	if(!n) return 0;
+	var idx=0;
+	var i=0;
+	var s=n.toLowerCase();
+	el.children("option").each(function(){
+		if(!$(this).attr("value")) {i++;return true;}
+		var v=$(this).attr("value").toLowerCase();
+		if(v && v!="")
+		{
+			if(v==s) {idx=i;return false;}
+		}
+		i++;
+	});
+	return idx;
+}
+function validateValueTest(v,values)
+{
+	var arr=values.split("|");
+	var i;
+	for(i in arr)
+	{
+		if(v==arr[i]) return true;
+	}
+	return false;
+}
+function isElementVisible(el)
+{
+	if(el.is(":hidden")) return false;
+	var ret=true;
+	return ret;
+}
+function validateRule(el,ev,rule,start,rev)
+{
+	var i;
+	if(start>=rule.length) return true;
+	switch(rule[start])
+	{
+		case 'get':
+		case 'fget':
+			var allru=rule[start+1];
+			var allruend='';
+			if(rule[start]=="fget") {allru='';allruend=$("[name="+rule[start+1]+"]").val();}
+			for(i=start+2;i<rule.length;i++)
+			{
+				$("[name="+allru+rule[i]+"]").each(function(){
+					if(el[0].selectedIndex==-1) return false;
+					var aprule=$(el[0].options[el[0].selectedIndex]).attr(rule[i]+allruend);
+					if(aprule)// && aprule!=""
+					{
+						if($(this)[0].tagName.toLowerCase()=="select")
+						{
+							$(this)[0].selectedIndex=select_findIndex($(this),aprule);
+						}
+						else
+						if($(this)[0].tagName.toLowerCase()=="input" && $(this)[0].type.toLowerCase()=="checkbox")
+						{
+							$(this)[0].checked=(aprule=="1"?true:false);
+						}
+						else
+						{
+							$(this).val(aprule);
+						}
+					}
+				});
+			}
+			break;
+		case 'invget':
+			//$("select[name="+rule[start+1]+"] option["+rule[start+2]+"="+rule[start+3]+"]").each(function(){
+			//	$(this).attr(rule[start+2],el.val());
+			//});
+			break;
+		case 'filter':
+			 //if (!$.browser.webkit)
+			{
+			var tosel=el[0].options[el[0].selectedIndex].value;
+			if(el[0].selectedIndex!=-1)
+			{
+				var tosel=el[0].options[el[0].selectedIndex].value;
+				if(tosel=="")
+				{
+					$("select[name="+rule[start+1]+"] option").show();
+				}
+				else
+				{
+					var allsel=rule[start+1].split("|");
+					for(var ii=0;ii<allsel.length;ii++)
+					{
+						$("select[name="+allsel[ii]+"] option").each(function(){
+							if(!$(this).attr(rule[start+2])) return true;
+							if($(this).attr(rule[start+2])==tosel || $(this).attr(rule[start+2])=="0")
+								$(this).show();
+							else
+								$(this).hide();
+						});
+					}
+				}
+			}
+			else
+			{
+				$("select[name="+rule[start+1]+"] option").show();
+			}
+			}
+			break;
+		case 'copy':
+			if(isElementVisible(el))
+			{
+				var newel=$("[name="+rule[start+1]+"]");
+				newel.val(el.val());
+			}
+			break;
+		case 'same':
+			if(isElementVisible(el))
+			{
+				var newel=$("[name="+rule[start+1]+"]");
+				el.val(newel.val());
+			}
+			break;
+		case 'set':
+			if(isElementVisible(el) && !rev)
+			{
+				if(rule[start+1]=="textbutton") $("#inaintebutton").html(rule[start+2]);
+				var newel=$("[name="+rule[start+1]+"]");
+				if(newel && newel.length && newel[0].tagName.toLowerCase()=="select")
+				{
+					newel[0].selectedIndex=select_findIndex(newel,rule[start+2]);
+				}
+				else
+				{
+					newel.val(rule[start+2]);
+				}
+			}
+			break;
+		case 'reset':
+			if(rule[start+1]=="id")
+			{
+				$("#"+rule[start+2]).val('').change();
+			}
+			else
+				if(rule[start+1]=="name")
+				{
+					$("[name="+rule[start+2]+"]").val('').change();
+				}
+			break;
+		case 'check':
+			var newel=$("[name="+rule[start+1]+"]");
+			if(newel.length)
+			{
+				newel[0].checked=true;
+			}
+		break;
+		case 'uncheck':
+			var newel=$("[name="+rule[start+1]+"]");
+			if(newel.length)
+			{
+				newel[0].checked=false;
+			}
+		break;
+		case 'duplicate':
+			var newel=$("#"+rule[start+1]+"");
+			var nrduplicate=parseInt(el.val(),10);
+			var key=rule[start+1];
+			var keymax=parseInt(rule[start+2],10);
+			if(keymax==0 || isNaN(keymax)) keymax=100;
+			if(key=="") key="1";
+			if(nrduplicate>=keymax) nrduplicate=keymax;
+			if(nrduplicate>1 && nrduplicate<=keymax)
+			{
+				var i;
+				var torep=rule[start+1];
+				for(i=2;i<=nrduplicate;i++)
+				{
+					var newrep=torep.replace("1",i);
+					if($("#"+newrep).length) continue;
+					var newnode=newel.html().replace(new RegExp(torep,'g'),newrep);
+					newel.parent().append('<tr id='+newrep+'>'+newnode);
+				}
+			}
+		break;
+		case 'ifchecked':
+			var v=el[0].checked;
+			if(v)
+			{
+				if(!validateRule(el,ev,rule,start+1))
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if(!validateRule(el,ev,rule,start+1,true))
+				{
+					return false;
+				}
+			}
+			break;
+		case 'if':
+			//strict
+			var v=$("[name="+rule[start+1]+"]").val();
+			if(validateValueTest(v,rule[start+2]))
+			{
+				if(!validateRule(el,ev,rule,start+3))
+				{
+					return false;
+				}
+			}
+			break;
+		case 'nif':
+			//strict not
+			var v=$("[name="+rule[start+1]+"]").val();
+			if(!validateValueTest(v,rule[start+2]))
+			{
+				if(!validateRule(el,ev,rule,start+3))
+				{
+					return false;
+				}
+			}
+			break;
+		case 'for':
+			//lejer if
+			if(el[0].type.toLowerCase()=="checkbox")
+			{
+				if(el[0].checked)
+				{
+					validateRule(el,ev,rule,start+2)
+				}
+				else
+				{
+					validateRule(el,ev,rule,start+2,!rev)
+				}
+			}
+			else
+			if(validateValueTest(el.val(),rule[start+1]))
+			{
+				validateRule(el,ev,rule,start+2)
+			}
+			else
+			{
+				validateRule(el,ev,rule,start+2,!rev)
+			}
+		break;
+		case 'notfor':
+			//lejer nif
+			if(el[0].type.toLowerCase()=="checkbox")
+			{
+				if(!el[0].checked)
+				{
+					validateRule(el,ev,rule,start+2)
+				}
+				else
+				{
+					validateRule(el,ev,rule,start+2,!rev)
+				}
+			}
+			else
+			if(!validateValueTest(el.val(),rule[start+1]))
+			{
+				validateRule(el,ev,rule,start+2)
+			}
+			else
+			{
+				validateRule(el,ev,rule,start+2,!rev)
+			}
+		break;
+		case 'hide':
+			rev=!rev;
+		case 'show':
+			if(!isElementVisible(el)) break;
+		case 'forceshow':
+			for(i=start+2;i<rule.length;i++)
+			{
+				if(rev)
+				{
+					if(rule[start+1]=="id")
+					{
+						$("#"+rule[i]).hide();
+					}
+					else
+					if(rule[start+1]=="class")
+					{
+						$("."+rule[i]).hide();
+					}
+					else
+					if(rule[start+1]=="name")
+					{
+						$("[name="+rule[i]+"]").hide();
+					}
+				}
+				else
+				{
+					var torev=false;
+					if(rule[start+1]=="id")
+					{
+						$("#"+rule[i]).show();
+						torev=$("#"+rule[i]);
+					}
+					else
+					if(rule[start+1]=="class")
+					{
+						$("."+rule[i]).show();
+						torev=$("."+rule[i]);
+					}
+					else
+					if(rule[start+1]=="name")
+					{
+						$("[name="+rule[i]+"]").show();
+						torev=$("[name="+rule[i]+"]");
+					}
+					//console.log("revalidez");
+
+					torev.find(".validated").each(function(){
+						if(isElementVisible($(this)))
+						{
+							validateFieldRule($(this),{type:"change"},$(this).attr("validate"));
+						}
+					});
+				}
+			}
+		break;
+		case 'extract':
+			switch(rule[start+1])
+			{
+				case 'varsta':
+					var varsta="";
+					var v=el.val();
+					if(v.length<7) break;
+					var yy=v.substr(1,2);
+					var mm=v.substr(3,2);
+					var dd=v.substr(5,2);
+					var dat = new Date();
+					var curday = dat.getDate();
+					var curmon = dat.getMonth()+1;
+					var curyear = dat.getFullYear();
+					var plusone=0;
+					if(curmon<parseInt(mm,10) || (curmon==parseInt(mm,10) && curday<parseInt(dd,10)))
+					{
+						plusone=1;
+					}
+					varsta=curyear%100-parseInt(yy,10)%100;
+					varsta-=plusone;
+					if(varsta<0) {varsta+=100};
+					if(varsta>100) {varsta%=100};
+					$("input[name="+rule[start+2]+"]").val(varsta);
+				break;
+				case 'sum':
+					var sum=0;
+					for(i=start+1;i<rule.length;i++)
+					{
+						var vvv=parseFloat($("input[name="+rule[i]+"]").val());
+						if(!isNaN(vvv)) sum+=vvv;
+					}
+					el.val(sum);
+				break;
+			}
+		break;
+		case 'revalidate':
+			var newel=$("[name="+rule[start+1]+"]");
+			if(isElementVisible(newel))
+			{
+				if(!validateFieldRule(newel,ev,newel.attr("validate")))
+				{
+					//do not failed this because it is already validated
+				}
+			}
+		break;
+		case 'nokeys':
+			if(ev && ev.keyCode)
+			{
+if (ev.keyCode == 8 || ev.keyCode == 46
+ || ev.keyCode == 37 || ev.keyCode == 39) {
+return true;
+}
+				for(i=start+1;i<rule.length;i++)
+				{
+					if(ev.keyCode==rule[i]) return false;
+				}
+			}
+		break;
+
+		case 'numberkeys':
+			var v=''+el.val();
+			if(v.indexOf('.')>-1) {el.val(v.replace(new RegExp(/\./,"gi"),''));v=el.val();}
+			if(v.indexOf(',')>-1) {el.val(v.replace(new RegExp(',',"gi"),''));v=el.val();}
+			if(v.indexOf(' ')>-1) {el.val(v.replace(new RegExp(' ',"gi"),''));v=el.val();}
+			if(v.indexOf('-')>-1) {el.val(v.replace(new RegExp('-',"gi"),''));v=el.val();}
+
+			if(ev && ev.keyCode)
+			{
+			if (ev.ctrlKey) return true;
+			if (ev.shiftKey) return false;
+
+if (ev.keyCode == 8 || ev.keyCode == 46
+ || ev.keyCode == 37 || ev.keyCode == 39) {
+return true;
+}
+				if(ev.keyCode<48 || ev.keyCode>57)
+				{
+					if(!(ev.keyCode>=96 && ev.keyCode<=105))
+					return false;
+				}
+			}
+		break;
+		case 'alfakeys':
+			if(ev && ev.keyCode)
+			{
+			if (ev.ctrlKey) return true;
+if (ev.keyCode == 8 || ev.keyCode == 46
+ || ev.keyCode == 37 || ev.keyCode == 39) {
+return true;
+}
+				if((ev.keyCode<48 || ev.keyCode>57) && !ev.shiftKey)
+				if(ev.keyCode<65 || ev.keyCode>90)
+				if(ev.keyCode<96 || ev.keyCode>105)
+					return false;
+			}
+		break;
+		case 'replace':
+			var v=el.val();
+			for(i=start+1;i<rule.length;i++,i++)
+			{
+				if(rule[i]=="(pt)")
+				{
+					if(rule[i+1]=="(pt)") rule[i+1]='.';
+					var patt=new RegExp("\\.","g");
+					if(v.replace(patt,rule[i+1])!=el.val())
+						el.val(v.replace(patt,rule[i+1]));
+				}
+				else
+				{
+					var re=new RegExp(rule[i].replace("\\","\\\\"),"gi");
+					if(rule[i+1]=="(pt)")
+					{
+						if(v.replace(re,".")!=el.val())
+							el.val(v.replace(re,"."));
+					}
+					else
+					{
+						if(v.replace(re,rule[i+1])!=el.val())
+							el.val(v.replace(re,rule[i+1]));
+					}
+				}
+				v=el.val();
+			}
+		break;
+		case 'call':
+			ret=window[rule[start+1]](el,rule[start+2],rule[start+3],rule[start+4],ev);
+		break;
+		case 'addmonths':
+			$("#"+rule[start+1]).val(calendarAutomaticCalculateEndDate($("#"+rule[start+2]).val(),el.val(),'dd.MM.yyyy'));
+		break;
+		case 'adddays':
+			$("#"+rule[start+1]).val(calendarAutomaticDays($("#"+rule[start+2]).val(),el.val(),'dd.MM.yyyy'));
+		break;
+		case 'addperioada':
+			if(parseInt(el.val())==1)
+				$("#"+rule[start+1]).val(calendarAutomaticDays($("#"+rule[start+2]).val(),30,'dd.MM.yyyy'));
+			else
+				$("#"+rule[start+1]).val(calendarAutomaticCalculateEndDate($("#"+rule[start+2]).val(),el.val(),'dd.MM.yyyy'));
+		break;
+		case 'nodays':
+			var daystoex=el.val().split(".");
+			for(i=start+1;i<rule.length;i++)
+			{
+				if(daystoex.length && daystoex[0]==rule[i])
+				{
+					el.val(calendarAutomaticDays(el.val(),2,'dd.MM.yyyy'));
+					daystoex=el.val().split(".");
+				}
+			}
+		break;
+		case 'uppercase':
+			if(!ev || !ev.keyCode)
+			{
+				el.val(el.val().toUpperCase());
+			}
+		break;
+		case 'required':
+			var bck=false;
+			var ret=true;
+			if(ret)
+			{
+				switch(rule[start+1])
+				{
+
+					case 'mask':
+					var elval=$(el).val();
+					var maskval=rule[start+2];
+					var re=new RegExp(maskval,"gi");
+					if(!re.test(elval))
+					{
+						ret=false;
+						bck=true;
+					}
+
+					break;
+				
+					case 'correct':
+						var onefound=false;
+						for(i=start+2;i<rule.length;i++)
+						{
+							if(el.val().length==parseInt(rule[i],10))
+							{
+								onefound=true;break;
+							}
+						}
+						if(!onefound)
+						{
+							bck=true;
+						}
+					break;
+					case 'size':
+						var onefound=false;
+						for(i=start+2;i<rule.length;i++)
+						{
+							if(el.val().length==parseInt(rule[i],10))
+							{
+								onefound=true;break;
+							}
+						}
+						if(!onefound)
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+					break;
+					case 'max':
+						if(el.val().length>parseFloat(rule[start+2]))
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+					break;
+					case 'minmax':
+						if(el.val().length>parseFloat(rule[start+3]) || el.val().length<parseFloat(rule[start+2]))
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+					break;
+					case 'min':
+						if(el.val().length<parseFloat(rule[start+2]))
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+					break;
+					case 'date':
+						var da=el.val();
+						if(da!="")
+						{
+							da=da.replace(/\//gi,".");
+							da=da.replace(/\\/gi,".");
+							el.val(da);
+							var arr=da.split(".");
+							if(da.length!=10) {bck=true;if(isElementVisible(el)) ret=false;}
+						}
+						else
+						{
+							bck=true;if(isElementVisible(el)) ret=false;
+						}
+					break;
+					case 'cnp':
+						var cnp=el.val();
+						if(cnp.length!=13) {bck=true;if(isElementVisible(el)) ret=false;}
+						if(cnp=="0000000000000") {bck=true;if(isElementVisible(el)) ret=false;}
+
+						var sum;
+						sum=parseInt(cnp.substr(0,1),10)*2 + parseInt(cnp.substr(1,1),10)*7 + parseInt(cnp.substr(2,1),10)*9 + parseInt(cnp.substr(3,1),10)*1 + parseInt(cnp.substr(4,1),10)*4 + parseInt(cnp.substr(5,1),10)*6 +
+							 parseInt(cnp.substr(6,1),10)*3 + parseInt(cnp.substr(7,1),10)*5 + parseInt(cnp.substr(8,1),10)*8 + parseInt(cnp.substr(9,1),10)*2 + parseInt(cnp.substr(10,1),10)*7 +parseInt(cnp.substr(11,1),10)*9;
+
+						var control = sum % 11;
+						if(control == 10) control = 1;
+						if (control != parseInt(cnp.substr(12,1),10)) {bck=true;if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;}
+					break;
+					case 'cui':
+						var cnp=el.val();
+						if(cnp.length>10) {bck=true;if(isElementVisible(el)) ret=false;}
+						if(cnp.length<2) {bck=true;if(isElementVisible(el)) ret=false;}
+						if(parseInt(cnp,10)==0) {bck=true;if(isElementVisible(el)) ret=false;}
+
+						var sum;
+						var i;var j;
+						sum=0;
+						var ctr;
+						ctr='753217532';
+						j=8;
+						for(i=cnp.length-2;i>=0;i--)
+						{
+							sum+=parseInt(cnp.substr(i,1),10)*parseInt(ctr.substr(j,1),10);
+							j--;
+						}
+						var control = sum*10 % 11;
+						if(control == 10) control = 0;
+						if (control != parseInt(cnp.substr(cnp.length-1,1),10)) {bck=true;if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;}
+					break;
+					case 'integer':
+						if(ev && ev.ctrlKey)
+						{
+						}
+						else
+						if(ev && ev.keyCode && (ev.keyCode>=65 && ev.keyCode<=90 || ev.keyCode==32 || ev.keyCode==110 || ev.keyCode==188 || ev.keyCode==190))
+						{
+							ret=false;
+						}
+					break;
+					case 'zeros':
+						var nm=el.val();
+						if(nm.length>0 && nm.length<=parseInt(rule[start+2],10))
+						{
+							var add=parseInt(rule[start+2],10)-el.val().length;
+							for(i=0;i<add;i++)
+								nm="0"+nm;
+							el.val(nm);
+						}
+					break;
+					case 'no':
+					break;
+					case 'attention':
+						bck=false;
+						if(el.attr("attention")!="yes")
+						{
+							if(ev && ev.type) el.attr("attention","yes");
+							else if(el.val()=="") bck=true;
+						}
+					break;
+					case 'email':
+						if(!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(el.val())))
+						{
+							//not ok
+							bck=true;
+							ret=false;
+						}
+					break;
+					case 'phone':
+						var st = el.val().replace(/[\(\)\.\-\ ]/g, '');
+						if(st.length!=10)
+						{
+							//not ok
+							bck=true;
+							ret=false;
+						}
+					break;
+					case 'call':
+						if(isElementVisible(el))
+						{
+							ret=window[rule[start+2]](el,rule[start+3],rule[start+4],rule[start+5]);
+							if(!ret) bck=true;
+						}
+					break;
+					case 'numeprenume':
+						if(el.val()=="")
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+						else
+						{
+							var numearr=el.val().split(" ");
+							if(numearr.length<2 || numearr[1]=="" || numearr[0]=="")
+							{
+								bck=true;
+								if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+							}
+						}
+					break;
+					case 'yes':
+					default:
+						if(el.val()=="")
+						{
+							bck=true;
+							if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+						}
+						else
+						{
+							if(el && el[0].tagName.toLowerCase()=="input" && el[0].type && el[0].type.toLowerCase()=="checkbox")
+							{
+								var prev=el.parent().parent().prev();
+								if(prev.length==0) prev=el.parent().parent().next();
+								if(!el[0].checked)
+								{
+								  el.parent().parent().addClass('validateatention')
+									//prev.addClass('bg-warning').find('i').addClass("animated").addClass("wobble");
+									bck=true;
+									if(isElementVisible(el) && (!ev || !ev.keyCode)) ret=false;
+								}
+								else
+								{
+									//prev.removeClass('bg-warning').find('i').removeClass("animated").removeClass("wobble");
+								}
+							}
+						}
+					break;
+				}
+				var prev=el.prev();
+				if(prev.length==0) prev=el.next();
+				if(bck)
+				{
+					el.addClass("validateatention");
+					prev.addClass('bg-warning').find('i').addClass("animated").addClass("wobble");
+				}
+				else
+				{
+					el.removeClass("validateatention");
+					prev.removeClass('bg-warning').find('i').removeClass("animated").removeClass("wobble");
+				}
+				return ret;
+			}
+		break;
+	}
+	return true;
+}
+
+function validateFieldRule(el,ev,validate)
+{
+	var rules;
+	var i;
+	var ret=true;
+	if(!validate) return true;
+	if(el.val()!="" && el[0].type.toLowerCase()!="file")
+	{
+		//remove diacritics
+		var newval=el.val();
+		newval=encodeURIComponent(newval);
+		newval=newval.replace(new RegExp("%C4%83","gi"),"a");
+		newval=newval.replace(new RegExp("%C4%82","gi"),"A");
+		newval=newval.replace(new RegExp("%C3%A2","gi"),"A");
+		newval=newval.replace(new RegExp("%C3%82","gi"),"a");
+		newval=newval.replace(new RegExp("%C3%82","gi"),"a");
+		newval=newval.replace(new RegExp("%C3%AE","gi"),"i");
+		newval=newval.replace(new RegExp("%C3%8E","gi"),"I");
+		newval=newval.replace(new RegExp("%C8%99","gi"),"s");
+		newval=newval.replace(new RegExp("%C8%98","gi"),"S");
+		newval=newval.replace(new RegExp("%C8%9B","gi"),"t");
+		newval=newval.replace(new RegExp("%C8%9A","gi"),"T");
+		newval=newval.replace(new RegExp("%C5%9E","gi"),"S");
+		newval=newval.replace(new RegExp("%C5%9F","gi"),"s");
+		newval=newval.replace(new RegExp("%C5%A2","gi"),"T");
+		newval=newval.replace(new RegExp("%C5%A3","gi"),"t");
+		el.val(decodeURIComponent(newval));
+	}
+
+	if(el.length && el[0].type.toLowerCase()=="radio")
+	{
+		if(!el[0].checked) return true;
+	}
+	if(el.length && el[0].type.toLowerCase()=="file")
+	{
+		var prev=el.prev();
+		if(el.val()=="")
+		{
+			el.addClass("validateatention");
+			prev.addClass('bg-warning').find('i').addClass("animated").addClass("wobble");
+			//background
+			return false;
+		}
+		if(el.next().val()=="")
+		{
+			el.addClass("validateatention");
+			prev.addClass('bg-warning').find('i').addClass("animated").addClass("wobble");
+			console.log("Imaginile se proceseaza... asteptati un pic si apoi reapasati butonul");
+			return false;
+		}
+		el.removeClass("validateatention");
+		prev.removeClass('bg-warning').find('i').removeClass("animated").removeClass("wobble");
+		//reset and resize
+		//el.remove();
+		return true;
+	}
+	rules=validate.split("~");
+	for(i in rules)
+	{
+		var tokens;
+		tokens=rules[i].split(".");
+		if(!ev || ev.type!="change")
+		{
+			if(tokens[0]=="nokeys" || tokens[0]=="numberkeys" || tokens[0]=="alphakeys")
+				return validateRule(el,ev,tokens,0);
+		}
+		else
+		{
+			if(!validateRule(el,ev,tokens,0))
+			{
+				ret=false;
+				if(el.attr("name") && el.attr("name")!="")
+					localStorage['t_'+el.attr("name")]='';
+			}
+			else
+			{
+				//save localstorage
+				if(el.val()=="null" || el.val()==null)
+				{
+					localStorage['t_'+el.attr("name")]='';
+				}
+				else
+				{
+										localStorage['t_'+el.attr("name")]=el.val();
+									}
+			}
+			//no more keycodes
+			if(ev.keyCode)
+				break;
+		}
+	}
+
+	return ret;
+}
+function calendar_finished(y,m,d)
+{
+	CP_tmpReturnFunction(y,m,d);
+	$(window.CP_targetInput).change();
+}
+
+function calculatetarife_pad()
+{
+	if($("select[name=tipcladire]")[0].selectedIndex==1)
+	{
+		$("b.tarifpad").html($("div.tarifA").html());
+		$("input.tarifpad_text").val($("div.tarifA").html());
+	}
+	if($("select[name=tipcladire]")[0].selectedIndex==2)
+	{
+		$("b.tarifpad").html($("div.tarifB").html());
+		$("input.tarifpad_text").val($("div.tarifB").html());
+	}
+	return true;
+}
+function valideazaproduspad()
+{
+
+return true;
+}
+function verificageolocation()
+{
+var localitate=$("[name=im_localitate]").val();
+if($("[name=im_judet]").val()=='bucuresti') localitate='Bucuresti';
+
+if($("[name=im_adresa_str]").val()!="")
+gotoMapAddress(""+$("[name=im_adresa_str]").val()+" "+$('[name=im_adresa_nr]').val()+" "+localitate+" Romania");
+
+}
+function verificaadresainpaid()
+{
+var localitate=$("[name=im_localitate]").val();
+if($("[name=im_judet]").val()=='bucuresti') localitate='Bucuresti';
+
+if($("[name=im_judet]").val()!="" && ($("[name=im_localitate]").val()!="" || $("[name=im_sector]").val()!=""))
+{
+$("#verifypaderror").html('<img src="images/loading.gif" border=0>').show();
+$("#verifypaderror").load("index.php?t=verificaadresainpaid",{
+	im_judet:$("[name=im_judet]").val(),
+	datavalabilitate:$("[name=datavalabilitate]").val(),
+	pf_cnp:$("[name=pf_cnp]").val(),
+	im_localitate:$("[name=im_localitate]").val(),
+	im_sector:$("[name=im_sector]").val(),
+	pad_serie:$("[name=pad_serie]").val(),
+	pad_numar:$("[name=pad_numar]").val(),
+	im_adresa_str:$("[name=im_adresa_str]").val(),
+	im_adresa_nr:$("[name=im_adresa_nr]").val(),
+	im_adresa_et:$("[name=im_adresa_et]").val(),
+	im_adresa_ap:$("[name=im_adresa_ap]").val(),
+	im_adresa_sc:$("[name=im_adresa_sc]").val(),
+	im_adresa_zip:$("[name=im_adresa_zip]").val(),
+	im_adresa_bl:$("[name=im_adresa_bl]").val(),
+	},function(d){
+		if($("#spanpadserie").length) $("input[name=pad_serie]").val($("#spanpadserie").text());
+		if($("#spanpadnumar").length) $("input[name=pad_numar]").val($("#spanpadnumar").text());
+		if($("#spanpaddate").length)
+		{
+			$("input[name=im_adresa_str]").val($("#spanpaddate").attr('str')).change();
+			$("input[name=im_adresa_nr]").val($("#spanpaddate").attr('nr')).change();
+			$("input[name=im_adresa_tip]").val($("#spanpaddate").attr('tip')).change();
+			$("input[name=im_adresa_bl]").val($("#spanpaddate").attr('bl')).change();
+			$("input[name=im_adresa_sc]").val($("#spanpaddate").attr('sc')).change();
+			$("input[name=im_adresa_et]").val($("#spanpaddate").attr('et')).change();
+			$("input[name=im_adresa_ap]").val($("#spanpaddate").attr('ap')).change();
+			$("input[name=im_adresa_zip]").val($("#spanpaddate").attr('zip')).change();
+		}
+	});
+	$("#infofacpentrupad").hide();
+}
+else
+$("#verifypaderror").hide();
+
+}
+
+function getcotafromstring(s)
+{
+	var ret=parseFloat(s);
+	if(isNaN(ret)) ret=0;
+	return Math.round(ret);
+}
+function valideazaDoarForma(f,valideaza)
+{
+	var slot="#workstep";
+	var ret=true;
+	$(slot).find(".validated").each(function(){
+		if(!$(this).hasClass("doaremitere") && isElementVisible($(this)))
+		{
+			if(!validateFieldRule($(this),{type:"change"},$(this).attr("validate")))
+			{
+				ret=false;
+				if(valideaza)
+					valideaza(this,false);
+				else
+					$(this).css("background-color","");
+			}
+			else
+			{
+				valideaza(this,true);
+			}
+		}
+	});
+	return ret;
+}
+
+function valideazasumaasigurata(el)
+{
+if(el.val()=="") return false;
+
+if(parseInt(el.val(),10)<10000)
+	return false;
+
+return true;
+}
+function valideazastructure()
+{
+return true;
+}
+
+function valideazaanconstructie()
+{
+if(parseInt($("input[name=anconstructie]").val(),10)==0 || isNaN(parseInt($("input[name=anconstructie]").val(),10))) return false;
+return true;
+}
+function valideazaintaltimesol()
+{
+	if($("input[name=tipoferta]").val()=="pad")
+	{
+		if(parseInt($("input[name=nrtrepte]").val(),10)>12 || parseInt($("input[name=nrtrepte]").val(),10)<-12)
+		{
+			return false;
+		}
+	}
+return true;
+}
+
+function valideazablocscara()
+{
+	if($("select[name=produsdorit]").val()=="pad+fac" || $("select[name=produsdorit]").val()=="pad")
+	{
+		if(($("select[name=tipadresa]").val()=="rural,bloc" || $("select[name=tipadresa]").val()=="urban,bloc") && $("input[name=tipoferta]").val()=="pad")
+		{
+			if($("input[name=im_adresa_sc]").val()=='' && $("input[name=im_adresa_bl]").val()=='')
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+var judetoblig='';
+function valideazajudet()
+{
+	$("select[name=pf_judet]").attr('readonly', false).css('pointer-events','all');
+	$("select[name=pj_judet]").attr('readonly', false).css('pointer-events','all');
+
+	var jud;
+	jud=judetoblig.toLowerCase();
+	if(jud=='')  return '';
+
+	var judet={};
+	judet["ab"]="alba";
+	judet["ar"]="arad";
+	judet["ag"]="arges";
+	judet["bc"]="bacau";
+	judet["bh"]="bihor";
+	judet["bn"]="bistrita";
+	judet["bt"]="botosani";
+	judet["bv"]="brasov";
+	judet["br"]="braila";
+	judet["bz"]="buzau";
+	judet["cs"]="caras";
+	judet["cj"]="cluj";
+	judet["ct"]="constanta";
+	judet["cv"]="covasna";
+	judet["db"]="dimbovita";
+	judet["db"]="dambovita";
+	judet["dj"]="dolj";
+	judet["gl"]="galati";
+	judet["gj"]="gorj";
+	judet["hr"]="harghita";
+	judet["hd"]="hunedoara";
+	judet["il"]="ialomita";
+	judet["is"]="iasi";
+	judet["if"]="ilfov";
+	judet["mm"]="maramures";
+	judet["mh"]="mehedinti";
+	judet["ms"]="mures";
+	judet["nt"]="neamt";
+	judet["ot"]="olt";
+	judet["ph"]="prahova";
+	judet["sm"]="satu";
+	judet["sj"]="salaj";
+	judet["sb"]="sibiu";
+	judet["sv"]="suceava";
+	judet["tr"]="teleorman";
+	judet["tm"]="timis";
+	judet["tl"]="tulcea";
+	judet["vs"]="vaslui";
+	judet["vl"]="vilcea";
+	judet["vl"]="valcea";
+	judet["vn"]="vrancea";
+	judet["b"]="bucuresti";
+	judet["cl"]="calarasi";
+	judet["gr"]="giurgiu";
+
+	if($("select[name=tipproprietar]").val()=="pf")
+	{
+		$("select[name=pf_judet]").val(judet[jud]).change().attr('readonly', true).css('pointer-events','none');;
+	}
+	if($("select[name=tipproprietar]").val()=="pj")
+	{
+		$("select[name=pj_judet]").val(judet[jud]).change().attr('readonly', true).css('pointer-events','none');;
+	}
+
+	return judet[jud];
+
+}
+
+function valideazaNrInm(el,r2,r3,r4,ev)
+{
+	var elval=$(el).val();
+	if(elval!="")
+	{
+		$(el).val(elval=elval.replace(/[- ]/g,''));
+	}
+	var maskval;
+	var re;
+	if($("select[name=inmatriculare]").val()!="inmatriculate"
+	 && $("select[name=inmatriculare]").val()!="urmeazainmatriculate")
+	{
+		judetoblig='';valideazajudet();return true;
+		/*
+		//primarii
+		//JJNNLLL
+		maskval="^(AB|AR|AG|BC|BH|BN|BT|BV|BR|BZ|CS|CJ|CT|CV|DB|DJ|GL|GJ|HR|HD|IL|IS|IF|MM|MH|MS|NT|OT|PH|SM|SJ|SB|SV|TR|TM|TL|VL|VS|VN|B)[0-9]{2,7}$";
+		re=new RegExp(maskval,"gi");
+		if(re.test(elval)) {judetoblig=elval.substr(0,2);valideazajudet();return true;}
+
+		//MAINNNNNN
+		maskval="^(MAI|A|ALA|FA)[0-9]{3,6}$";
+		re=new RegExp(maskval,"gi");if(re.test(elval)) {judetoblig='';valideazajudet();return true;}
+		*/
+		return false;
+	}
+
+	//JJNNLLL
+	maskval="^(AB|AR|AG|BC|BH|BN|BT|BV|BR|BZ|CS|CJ|CT|CL|CV|DB|DJ|GL|GJ|HR|HD|IL|IS|IF|MM|MH|MS|NT|OT|PH|SM|SJ|SB|SV|TR|TM|TL|VL|VS|VN)[0-9]{2}[a-zA-Z]{3}$";
+	re=new RegExp(maskval,"gi");
+	if(re.test(elval)) {judetoblig=elval.substr(0,2);valideazajudet();return true;}
+
+	//BNNNLLL
+	maskval="^B[0-9]{2,3}[a-zA-Z]{3}$";
+	re=new RegExp(maskval,"gi");if(re.test(elval)) {judetoblig=elval.substr(0,1);valideazajudet();return true;}
+	//JJNNNNNNN CDNNNNNNN CONNNNNNN TCNNNNNNN JJNNNNNAALL
+	//BNNNNNNN
+	maskval="^(AB|AR|AG|BC|BH|BN|BT|BV|BR|BZ|CS|CJ|CT|CV|DB|DJ|GL|GJ|HR|HD|IL|IS|IF|MM|MH|MS|NT|OT|PH|SM|SJ|SB|SV|TR|TM|TL|VL|VS|VN|B|CL|GR|CD|CO|TC)[0-9]{6,9}$";
+	re=new RegExp(maskval,"gi");if(re.test(elval)) {judetoblig=elval.substr(0,2);valideazajudet();return true;}
+
+	//JJNNNPROBE
+	maskval="^(AB|AR|AG|BC|BH|BN|BT|BV|BR|BZ|CS|CJ|CT|CV|DB|DJ|GL|GJ|HR|HD|IL|IS|IF|MM|MH|MS|NT|OT|PH|SM|SJ|SB|SV|TR|TM|TL|VL|VS|VN|B|CL|GR)[0-9]{3}PROBE$";
+	re=new RegExp(maskval,"gi");if(re.test(elval)) {judetoblig=elval.substr(0,2);valideazajudet();return true;}
+
+	//MAINNNNNN
+	maskval="^(MAI|A|ALA|FA)[0-9]{4,6}$";
+	re=new RegExp(maskval,"gi");if(re.test(elval)) {judetoblig='';valideazajudet();return true;}
+
+	return false;
+}
+
+var lastvalidateerrors="";
+function valideazaFormaPentruSalvare(f,valideaza)
+{
+	lastvalidateerrors='';
+	if($("input[name=affiliateid]").length)
+	{
+		if(getLocalInt("affiliateid",0))
+		{
+			$("input[name=affiliateid]").val(getLocalInt("affiliateid",0));
+		}
+	}
+	if(getLocalData("externalRef","")!="" && f && !$("input[name=externalRef]").length)
+	{
+		//add field to form
+		var exf=document.createElement("input");
+		exf.setAttribute("type","hidden");
+		exf.setAttribute("name","externalRef");
+		exf.setAttribute("value",getLocalData("externalRef",""));
+		f.appendChild(exf);
+	}
+
+	var slot="#work";
+	var ret=true;
+	$(slot).find(".validated").each(function(){
+		if(isElementVisible($(this)))
+		{
+			if(!validateFieldRule($(this),{type:"change"},$(this).attr("validate")))
+			{
+				if(valideaza)
+					valideaza(this,false);
+				else
+					$(this).css("background-color","");
+				ret=false;
+				if($(this).parent()
+					 && $(this).parent().parent()
+					)
+					lastvalidateerrors+=" "+$(this).parent().parent().find("label:visible").text();
+			}
+			else
+			{
+				if(valideaza) valideaza(this,true);
+			}
+		}
+	});
+	var allok=true;
+	if(isElementVisible($("#pastarife")))
+	{
+		$(slot).find("input[name=selectiesoc]").each(function(){
+			if($(this)[0].checked)
+			{
+				allok=true;return false;
+			}
+			else
+			{
+				allok=false;
+			}
+		});
+		$("#work input[name=refreshslot]").val("work");
+	}
+	else
+	{
+		$("#work input[name=refreshslot]").val("dummy");
+	}
+
+
+	if(!allok)
+	{
+		ret=false;
+		setTimeout('alert("Va rugam selectati tariful dorit.");',100);
+	}
+	else
+	if(ret==false)
+	{
+		$("#workloading").hide();
+		//setTimeout('alert("Nu pot sa salvez, sunt date gresite sau necompletate. Verificati marcajele.");',100);
+	}
+	else
+	{
+		$("option").prop('disabled', false);
+		//$("#savebutton").attr("disabled","yes");
+	}
+
+	return ret;
+}
+var punemarcaje;
+function reloadValidators(slot)
+{
+	if(typeof(Storage)!=="undefined")
+	{
+		$("#work input[type!=hidden]").add("#work select").each(function(){
+			if($(this).attr("name")=="tarif") return true;
+			if(!$(this).attr("name")) return true;
+			if($(this).attr("name")=="acord_tipoferta") return true;
+			if($(this).attr("name")=="") return true;
+			if($(this).attr("name")=="continut") return true;
+			if(localStorage['t_'+$(this).attr("name")]!="" && localStorage['t_'+$(this).attr("name")]!="null" && localStorage['t_'+$(this).attr("name")]!=null)
+			{
+									$(this).val(localStorage['t_'+$(this).attr("name")]).change();
+					if($(this).attr("name").substr(0,5)=="acord" && localStorage['t_'+$(this).attr("name")]=="da")
+						$(this).prop('checked', true);
+							}
+		});
+	}
+
+	var one=false;
+	$(slot).find(".validated").each(function(){
+		var arr;
+		if($(this).attr("validators")) 
+		{
+			arr=""+$(this).attr("validators");
+		}
+		else arr="change";
+
+		//if(arr.length>1) console.log(arr);
+		arr=arr.split(".");
+		var i;
+		for(i in arr)
+		{
+			$(this).unbind(arr[i]).bind(arr[i],function(ev){
+				var ret=validateFieldRule($(this),ev,$(this).attr("validate"));
+				if(punemarcaje) punemarcaje(this,ret);
+				return ret;
+			});
+		}
+		var ret=validateFieldRule($(this),{},$(this).attr("validate"));
+		if(punemarcaje)
+		{
+			punemarcaje(this,ret);
+		}
+		one=true;
+	});
+	$("#work input[title]").add("#work select[title]").focus(function(){
+		$(this).tooltip('show');
+		});
+		
+	if(one)
+	{
+		$("form[name=work]").attr("callmefirst","valideazaFormaPentruSalvare");
+	}
+	//bind calendar
+	global_cal.setReturnFunction("calendar_finished");
+}
+function valideaprocbunuri()
+{
+	if($("select[name=proc_bunuri]").length)
+	{
+		var proc=$("select[name=proc_bunuri]").val();
+		if(proc!="")
+		{
+			$("input[name=sa_bunuri]").val(Math.round(parseInt($("input[name=sumaasigurata]").val(),10) * proc / 100));
+		}
+	}
+	return true;
+}
+function valideazapad()
+{
+	if($("select[name=tipcladire]").length && $("select[name=tipcladire]")[0].selectedIndex==2)
+	{
+		var ret=true;
+		if($("input[name=sumaasigurata]").val()!="10000")
+		{
+			$("input[name=sumaasigurata]").val("10000");
+			ret=false;
+		}
+		return ret;
+	}
+	var cotafinala=0;
+	//cota1
+	if($("select[name=tipproprietar]")[0].selectedIndex==1)
+		cotafinala+=getcotafromstring(''+$("input[name=pf_cota]").val());
+	else
+	if($("select[name=tipproprietar]")[0].selectedIndex==2)
+		cotafinala+=getcotafromstring($("input[name=pj_cota]").val());
+
+	//cota2
+	if($("select[name=tipproprietar2]").length)
+	{
+	if($("select[name=tipproprietar2]")[0].selectedIndex==1)
+		cotafinala+=getcotafromstring($("input[name=pf2_cota]").val());
+	else
+	if($("select[name=tipproprietar2]")[0].selectedIndex==2)
+		cotafinala+=getcotafromstring($("input[name=pj2_cota]").val());
+	}
+
+	if(cotafinala!=100)
+	{
+		var cota1=0;
+		if($("select[name=tipproprietar]")[0].selectedIndex==1)
+		{
+			cota1+=getcotafromstring($("input[name=pf_cota]").val());
+			$("input[name=pf_cota]").val(cota1+100-cotafinala);
+		}
+		else
+		if($("select[name=tipproprietar]")[0].selectedIndex==2)
+		{
+			cota1+=getcotafromstring($("input[name=pj_cota]").val());
+			$("input[name=pj_cota]").val(cota1+100-cotafinala);
+		}
+		return false;
+	}
+	return true;
+}
+
+function calculeazaNrZile()
+{
+	if($("input[name=panalavalabilitate]").val()=="") {$("input[name=nrzile]").val('');return;}
+	if($("input[name=datavalabilitate]").val()=="") {$("input[name=nrzile]").val('');return;}
+	var arr=$("input[name=panalavalabilitate]").val().split('.');
+	var d1 = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+
+	arr=$("input[name=datavalabilitate]").val().split('.');
+	var d2 = new Date(arr[2], parseFloat(arr[1])-1, arr[0]);
+
+	var one_day=6*6*24;
+	days=Math.round((d1.getTime()/100000-d2.getTime()/100000)/(one_day))+1;
+
+	if(days<2 || isNaN(days))
+	{
+		$("input[name=panalavalabilitate]").val('');
+		days='';
+	}
+
+	$("input[name=nrzile]").val(days);
+	return true;
+}
+function calculeazaNrZile2()
+{
+	if($("input[name=panalavalabilitate]").val()=="") {$("input[name=nrzile]").val('');return;}
+	if($("input[name=datavalabilitate]").val()=="") {$("input[name=nrzile]").val('');return;}
+
+	var d1 = new Date($("#panalavalabilitate").val());
+	var d2 = new Date($("#datavalabilitate").val());
+
+	var one_day=6*6*24;
+	days=Math.round((d1.getTime()/100000-d2.getTime()/100000)/(one_day))+1;
+
+	if(days<2 || isNaN(days))
+	{
+		$("input[name=panalavalabilitate]").val('');
+		days='';
+	}
+
+	$("input[name=nrzile]").val(days);
+	return true;
+}
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+}
+function clienticalculeazascore()
+{
+	var score=0;
+	var options = document.forms['work'];
+	for(i = 0; i < options.length; i++)
+	{
+		var opt = options[i];
+		if(opt.type=="radio")
+		{
+			if(opt.checked)
+			{
+				score+=parseInt(opt.value);
+			}
+		}
+	}
+	$("input[name=clscore]").val(score);
+}
+
+function pregatesteAutocomplete(el,nume,lknume,lksector)
+{
+	var loc="";
+	var torepl='';
+	if(el.val()=="bucuresti")
+	{
+		loc='BUCURESTI';
+	}
+	else
+	{
+		if(lksector!="" && $("select[name="+lksector+"]").length)
+		{
+			$("select[name="+lksector+"]")[0].selectedIndex=0;
+		}
+	}
+	el=$("[name="+lknume+"]");
+	if(el.attr("lk"+lknume))
+	{
+		torepl=el.attr("lk"+lknume).replace("["+nume+"]",$("[name="+nume+"]").val());
+		if(torepl!=el.attr("lk"))
+		{
+			el.val(loc);
+		}
+		el.attr("lk",torepl);
+	}
+	else
+	{
+		el.attr("lk"+lknume,el.attr("lk"));
+		torepl=el.attr("lk"+lknume).replace("["+nume+"]",$("[name="+nume+"]").val());
+		el.attr("lk",torepl);
+	}
+}
+
+
+$(document).bind('slotReloaded',function(event,data){
+	reloadValidators("#"+data);
+});
+
+$(document).ready(function(){
+
+	//setTimeout("reloadViewport()",500);
+
+	$("#savebutton").removeAttr("disabled");
+	reloadValidators("#work");
+
+});
+
+function updateCells()
+{
+	var SA=parseFloat($("input[name=sumaasigurata]").val());
+	var AC=parseFloat($("input[name=anconstructie]").val());
+	$("*[crule]").each(function(){
+		var afrule=0;
+		eval($(this).attr("crule"));
+		afrule=afrule.toFixed(0);
+		$(this).html(""+afrule+" EURO");
+	});
+}
+
+function copyToClipboard(element) {
+    var text = element.textContent;
+    var textarea = document.createElement('textarea');
+    textarea.value = text.trim();
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    $(element).tooltip({title: "Copiat!", trigger: "click"}).tooltip("show");
+    setTimeout(function() {
+        $(element).tooltip('hide');
+    }, 2000);
+}
+
+</script>
+<style>
+	
+.elegantshd {
+  letter-spacing: .12em;
+  text-shadow: 2px 3px 5px #948f8f;
+  font-size: 1.3em;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+
+span.spanversion
+{
+font-size: 0.5em;
+}
+
+@keyframes borderanime {
+    from {border-color:red !important;}
+    to {border-color:yellow !important;}
+}
+
+#work .validateatention
+{
+animation-name: borderanime;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+}
+
+#progressdiv
+{
+	margin-bottom: 0px;
+}
+
+
+div.datepicker
+{
+z-index: 1000;
+}
+
+div.datepicker a
+{
+text-decoration:none;
+}
+
+#termeneconditii
+{
+text-align: justify;
+}
+
+.navbar-brand {
+	color: #ffffff;
+	box-shadow: 0px 0px 4px #333 inset;
+	background-color: white;
+}
+
+.slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  
+form[name=work] .bg-danger>.animated
+{
+	animation-iteration-count: 10 !important;
+}
+
+form[name=work] select {
+	height: 100% !important;
+}
+
+form[name=work] form-group>.input-group-text
+{
+	width: 12%;
+}
+.card
+{
+overflow: visible;
+}
+
+#termeneconditii h4,#termeneconditii h3
+{
+text-align:left;
+}
+
+#overlay {
+	background-color: rgba(0, 0, 0, 0.2);
+	filter: alpha(opacity=20);
+	z-index: 9999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#loading
+{
+	position: absolute;
+	display: none;
+	z-index: 20000;
+}
+
+iframe.iframes
+{
+ width:100%;
+ height:100%;
+ border:solid 1px #bbb;
+}
+
+.mw200px
+{
+  min-width:200px;
+}
+
+body {
+overflow-x: hidden;
+}
+
+.worktarif,.worktarifplus
+{
+  margin-bottom: 1px;
+}	</style>
+	
+</head>
+<body>
+
+<div id=headerdiv>
+<div class="navbar navbar-expand-lg color-light">
+
+    <a class="ms-4" href="https://kit5.asiguram.ro/"><img class="rounded" src="cachedemo/logo.jpg" height=48 alt="Ai Software srl CONT TEST" border=0></a>
+
+  <a href="contact" target="contactbroker" type="button" class="mx-auto float-right btn btn-secondary rounded-pill" data-bs-scroll="out">Contact</a>
+  <!--<a href="contact" type="button" class="btn btn-info rounded-pill" data-bs-scroll="out" style="position:fixed;right:auto;left:auto;top:1%;">Contact</a>-->
+
+      <form method="get" action="search" class="d-none d-sm-block me-4 freeform form-inline  float-right" onsubmit="if($('input[name=q]').val()=='' || $('input[name=q]').attr('vizi')!='true') {if($('input[name=q]').val()=='' && $('input[name=q]').attr('vizi')!='') {$('input[name=q]').hide('fast');$('input[name=q]').attr('vizi','');} else {$('input[name=q]').attr('vizi','true').show('fast').focus();} return false;} return true;">
+      <div class="input-group input-group-lg">
+      <input class="form-control input-sm" name="q" style="display:none;" vizi='' onkeydown="if($(this).is(':visible') && event.keyCode == 13) {$(this.form).submit();}; return true;">
+        <div class="input-group-btn">
+        <button class="btn btn-secondary" type="submit"><i class="fa fa-search fa-2x"></i></button>
+        </div>
+      </div>
+      <input type="hidden" name="sitesearch" value="kit5.asiguram.ro" />
+      </form>
+      
+<button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="bi-list text-primary"></i>
+  </button>
+
+          <button class="nav-item btn btn-link nav-link py-2 px-0 px-lg-2 d-flex align-items-center" id="bd-theme">
+            <span class="bi bi-moon"></span>
+            </button>
+          
+  </div>
+
+  <div class="d-none d-md-block bs-divider mb-1"></div>
+
+
+<div class="navbar navbar-expand-lg navbar-dark bg-primary col-md-12 col-lg-12 d-md-block collapse" id="sidebarMenu">
+
+  <div class="container-fluid fw-bold">
+    <ul class="navbar-nav btn-group  mx-auto">
+      <li class="nav-item">
+        <a class="btn na2v-link btn-info" href="all">Asigurari</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Informatii
+          </a>
+          <ul class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="despre-noi">Despre noi</a>
+          <li><hr class="dropdown-divider"></li>
+          <a class="dropdown-item" href="informare">Informare GDPR</a>
+          <a class="dropdown-item" href="dnt"> Formular DNT</a>
+          <a class="dropdown-item" href="info_rca">Ghid RCA</a>
+          <a class="contulmeu dropdown-item" href="loginmobil">Contul meu</a>
+          <li><hr class="dropdown-divider"></li>
+          <a class="dropdown-item" href="termeni-conditii">Termeni si conditii</a>
+          <a class="dropdown-item" href="cum-platesc">Cum platesc</a>
+          <a class="dropdown-item" href="documente">Documente Utile</a>
+          <a class="dropdown-item" href="baar">BAAR Risc Ridicat</a>
+          <a class="dropdown-item" href="https://amiabila.com/home" target="amiabila">Constat amiabil</a>
+<!--          <a class="dropdown-item" href="verifica">Verifica</a> -->
+<!--          <a class="dropdown-item" href="http://asiguram.ro/qr.php" target="qr">Scaneaza cod QR</a> -->
+          </ul>
+        </li>
+
+            <li class="nav-item">
+        <a class="nav-link" href="sso---single-sign-on">SSO - Single Sign On</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="validare-registre">Validare Registre</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="marketplace">Marketplace</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="setare-rsi-key-api">Setare RSI KEY API</a>
+      </li>
+          </ul>
+
+    <div class="fb-like float-left" data-href="https://kit5.asiguram.ro/" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+    
+  </div>
+
+  </div>
+
+  <div class="d-none d-md-block bs-divider mt-1"></div>
+
+</div><!-- headerdiv -->
+
+<div class="container-fluid p-0 mt-4 mb-0">
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    
+<script>
+$(document).ready(function(){
+    var referalid="";
+    if(referalid!="")
+      setLocalData("externalRef",referalid);
+    else
+      referalid=getLocalData("externalRef","");  
+});
+</script>
+<DIV ID="calendardiv" STYLE="position:absolute;visibility:hidden;background-color:white;z-index:100;"></DIV>
+<script>
+var global_cal = new CalendarPopup("calendardiv");
+//global_cal.showNavigationDropdowns();
+global_cal.setCssPrefix("");
+global_cal.setMonthNames('Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie');
+global_cal.setDayHeaders('D','L','M','M','J','V','S');
+global_cal.setWeekStartDay(1);
+global_cal.setTodayText("Astazi");
+global_cal.showYearNavigation();
+global_cal.showYearNavigationInput();
+</script>
+<script>window.mypreloaddata=false;</script><form enctype="multipart/form-data" method="post" action="?s=work" name="work">
+<input type="hidden" name="frandom" value="1759586710">
+<input type="hidden" name="affiliateid" value="">
+<div id=work class="">
+  <div class="row">
+    <div class="col-12 mx-auto m-x-auto">
+
+<div id=progressdiv class="progress" style="display:none;">
+  <div class="progress-bar col-12 " id="formprogress" role="progressbar">
+    <span class="sr-only">...</span>
+  </div>
+</div>
+
+<div id="worknext" class="btn-group col-12" role="group" aria-label="Formular" style="padding:0px;">
+  <button id="inapoibutton" type="button" class="btn btn-secondary col-2" onclick="return loadBackStep('button');">Inapoi</button>
+	<button id="inaintebutton" type="button" class="btn btn-primary col-10" onclick="return loadOneStep('button');"><i class="fa fa-check"></i> Urmatorul&nbsp;pas</button>
+</div>
+
+
+    </div>
+</div>
+
+</div>
+</form>
+
+<div id="workloading" style="display:none;"><i class="fa fa-refresh fa-spin fa-fw"></i><span class="sr-only">Se incarca...</span></div>
+
+<a class="option" id="ajaxifyloader" href="#" style="display:none;">redirect</a>
+<script>
+
+function calendar_finished(y,m,d)
+{
+	CP_tmpReturnFunction(y,m,d);
+	$(window.CP_targetInput).change();
+}
+function setDRPCIVDate()
+{}
+var sasiuri={};
+function cateDateInDRPCIV(el,p1,p2,p3,ev)
+{
+	if(!ev || ev.type!="change") return true;
+	if(!isElementVisible(el)) return true;
+	var sasiu=$("input[name=seriesasiu]").val();
+	if(sasiu=="") {return true;}
+	if(sasiuri[sasiu]) return true;
+
+	sasiu=sasiu.replace(/[oOqQ]/g,'0');
+	sasiu=sasiu.replace(/[iI]/g,'1');
+	$("input[name=seriesasiu]").val(sasiu);
+
+	sasiuri[sasiu]=true;
+
+	$("#loading").show();
+	$("#overlay").show();
+
+$.ajax({
+	type: "POST",
+	url: "",
+	data: {action:"CautaDRPCIV",sasiu:sasiu},
+	success: function(d){
+		$("#loading").hide();
+		$("#overlay").hide();
+		if(!isElementVisible($("input[name=seriesasiu]"))) return;
+		if(d.categorie=="") return;
+		$("select[name=categorie]").val(d.categorie).change();
+		if(d.categorie!="") $("select[name=categorie]");
+		if(d.nrinm!="")
+		{
+			$("input[name=nrinm]").val(d.nrinm).change();
+		}
+		if(d.serieciv && d.serieciv!="")
+		{
+			$("input[name=serieciv]").val(d.serieciv).change();
+			$("select[name=inmatriculare]").val('inmatriculate').change();
+		}
+		if(d.anfabricatie!="" && d.anfabricatie!="0")
+		{
+			$("select[name=anfabricatie]").val(d.anfabricatie).change();
+		}
+		$("input[name=marca]").val(d.marca).change();
+		$("input[name=model]").val(d.model).change();
+		$("select[name=propulsie]").val(d.propulsie).change();
+		$("input[name=kg]").val(d.kg).change();
+		$("input[name=cilindree]").val(d.cilindree).change();
+		$("input[name=cp]").val(d.cp).change();
+		$("input[name=locuri]").val(d.locuri).change();
+	 	$("select[name=culoare]").val(d.culoare).change();
+		if(d.mesaj && d.mesaj!="")
+		{
+			console.log('Eroare '+d.mesaj);
+
+			$("input.drpcivone").each(function(){
+				$(this).attr('readonly', false);
+			});
+			$("select.drpcivone").each(function(){
+				$(this).attr('readonly', false).css('pointer-events','all');
+			});
+
+		}
+		else
+		{
+			$("select[name=inmatriculare]").val('inmatriculate').change();
+			$("input.drpcivone").each(function(){
+				if(d[$(this).attr("name")] && d[$(this).attr("name")]!="")
+					$(this).attr('readonly', true);
+				else
+					$(this).attr('readonly', false);
+			});
+			$("select.drpcivone").each(function(){
+				if(d[$(this).attr("name")] && d[$(this).attr("name")]!="")
+					$(this).attr('readonly', true).css('pointer-events','none');
+				else
+					$(this).attr('readonly', false).css('pointer-events','all');
+			});
+			
+		}
+		//else
+ 		 //alert("Datele au fost preluate. Va rugam verificati!");
+	},
+	error: function(d){
+		$("#loading").hide();
+		$("#overlay").hide();
+		console.log("O eroare nu permite preluarea datelor.");
+		
+		$("input.drpcivone").each(function(){
+				$(this).attr('readonly', false);
+			});
+		$("select.drpcivone").each(function(){
+			$(this).attr('readonly', false).css('pointer-events','all');
+		});
+		
+	}
+ });
+
+  return true;
+}
+function seteazabloc(el,p1,p2,p3,ev)
+{
+	//if(!ev || ev.type!="change") return;
+	var ap=$("input[name="+p1+"adresa_ap]").val();
+	var bloc=$("input[name="+p1+"adresa_bl]").val();
+	if(ap!="" && bloc=="")
+	{
+		$("input[name="+p1+"adresa_bl]").val('-');
+	}
+}
+function cautacodpostal(el,p1,p2,p3,ev)
+{
+	if(!ev || ev.type!="change") return;
+	var judet=$("select[name="+p1+"judet]").val();
+	if(judet=="bucuresti")
+		$("input[name="+p1+"localitate]").val('bucuresti');
+	if(judet=="") return;
+	var loc=$("input[name="+p1+"localitate]").val();
+	if(loc=="") return;
+
+	var sector=$("select[name="+p1+"sector]").val();
+	var str=$("input[name="+p1+"adresa_str]").val();
+	var nr=$("input[name="+p1+"adresa_nr]").val();
+	$.ajax({
+		type: "GET",
+		url: "https://ai3.aisoftware.ro/codpostal/getcodpostal.php",
+		data: {judet:judet,loc:loc,str:str,nr:nr,sector:sector},
+		success: function(d){
+			//alert(d);
+			if(d!="")
+			$("input[name="+p1+"adresa_zip]").val(d);
+			},
+			error: function(d){
+				console.log("O eroare nu permite preluarea cod postal.");
+			}
+	});
+	return true;
+}
+var cuiuri={};
+function cautaCUI(el,p1,p2,p3,ev)
+{
+	if(!ev || ev.type!="change") return true;
+	var cui=$("input[name=pj_cui]").val();
+	if(cui=="") return true;
+	if(cuiuri[cui]) return true;
+
+	$.ajax({
+		type: "GET",
+		url: "https://ai3.aisoftware.ro/cui/getcui.php",
+		data: {cui:cui},
+		success: function(d){
+			cuiuri[cui]=true;
+				var ret=JSON.parse(d);
+				for(var a in ret)
+				{
+					$("[name="+a+"]").val(ret[a]).change();
+					if(a=="pj_judet" || a=="pj_sector")
+						$("[name="+a+"]").change();
+				}
+				if(!ret['codpostal'])
+					$("[name=pj_adresa_nr]").change();
+			},
+			error: function(d){
+				console.log("O eroare nu permite preluarea CUI.");
+			}
+	});
+	return true;
+}
+function validateVoucher(el,p1,p2,p3,ev)
+{
+	if(!ev || ev.type!="change") return true;
+	var voucher=$("input[name=voucher]").val();
+	if(voucher=="") return true;
+
+	var ret=true;
+	$.ajax({
+		type: "GET",
+		url: "checkvoucher",
+		data: {voucher:voucher},
+		success: function(d){
+				if(d.err && d.err!="")
+				{
+					ret=false;
+					$("input[name=voucher]").prev().addClass('bg-warning');
+				}
+				else
+				{
+					ret=true;
+					$("input[name=voucher]").prev().removeClass('bg-warning');
+				}
+			},
+			error: function(d){
+				console.log("O eroare nu permite preluarea CUI.");
+				$("input[name=voucher]").prev().addClass('bg-warning');
+			}
+	});
+	return ret;
+}
+
+var steper_lastid=1;
+function clickPlataInRate(tarif,btn)
+{
+	$("#tab_platainrate").click();
+	$("input[name=tarif]").val(tarif).change();
+
+	$("input[name=p_soc]").val($(btn).attr("socid"));
+	$("input[name=p_per]").val($(btn).attr("per"));
+
+	$("#soctarife").hide(1000,function(){
+		checkIfInView($("input[name=tarif]"));
+	});
+	$("#tab_plataonline").parent().hide();
+	$("#tarifalesspan").html("Plata in rate");
+
+	$("option.fararate").hide();
+	$("option.doarrate").show();
+
+	if($("select[name=tipplata]").length) $("select[name=tipplata]")[0].selectedIndex=0;
+	checkIfInView($("select[name=tipplata]").change());
+
+	if($("select[name=ce_rate]").length) $("select[name=ce_rate]")[0].selectedIndex=1;
+	if($("select[name=optrate]").length) $("select[name=optrate]")[0].selectedIndex=1;
+	if($("select[name=uni_rate]").length) $("select[name=uni_rate]")[0].selectedIndex=1;
+	checkIfInView($("input[name=tipplata]"));
+
+	if($(btn).attr("per")=="6")
+	{
+		$("option.doarintegral").hide();
+	}
+	else
+	{
+		$("option.doarintegral").show();
+	}
+
+
+	return false;
+}
+function clickPlataIntegral(tarif,btn)
+{
+	$("#tab_plataonline").click();
+
+	$("input[name=tarif]").val(tarif).change();
+
+	$("input[name=p_soc]").val($(btn).attr("socid"));
+	$("input[name=p_per]").val($(btn).attr("per"));
+
+	$("#soctarife").hide(1000,function(){
+		checkIfInView($("input[name=tarif]"));
+	});
+	$("#tab_platainrate").parent().hide();
+	$("#tarifalesspan").html("Plata cu reducere");
+
+	$("option.fararate").show();
+	$("option.doarrate").hide();
+
+	if($("select[name=tipplata]").length) $("select[name=tipplata]")[0].selectedIndex=0;
+	$("select[name=tipplata]").change();
+
+	if($("select[name=ce_rate]").length) $("select[name=ce_rate]")[0].selectedIndex=0;
+	if($("select[name=optrate]").length) $("select[name=optrate]")[0].selectedIndex=0;
+	if($("select[name=uni_rate]").length) $("select[name=uni_rate]")[0].selectedIndex=0;
+
+
+	checkIfInView($("input[name=tipplata]"));
+
+	return false;
+}
+function alegeTarifIar()
+{
+	$("input[name=tarif]").val('').change();
+
+	$("#soctarife").show("fast");
+
+	$("#tab_platainrate").parent().show();
+	$("#tab_plataonline").parent().show();
+	$("#tarifalesspan").html("Tarif ales");
+}
+
+function reloadSteperTarife()
+{
+	
+
+
+	$("#work a.worktarif").unbind('click').click(function(){
+		if($(this).hasClass("btn-success")) {$("input[name=p_soc]").val('');$("#work a.worktarifplus").removeClass('btn-success').addClass('btn-warning');$(this).removeClass('btn-success').addClass('btn-warning');refreshTarifTotal();return false;}
+		$("#work a.worktarifplus").removeClass('btn-success').addClass('btn-warning');
+		$("#work a.worktarif").removeClass('btn-success').addClass('btn-warning');
+		$("#work a.worktarifplus").hide();
+		$("#work a.worktarifplus[per="+$(this).attr("per")+"]").show();
+		$(this).removeClass('btn-warning').addClass('btn-success');
+		$("input[name=p_soc]").val($(this).attr("socid"));
+		$("input[name=p_per]").val($(this).attr("per"));
+		$("input[name=dauneexpert]").val('');
+		$("input[name=signalexpert]").val('');
+		$("input[name=cityperfect]").val('');
+		$("input[name=citytractari]").val('');
+		$("input[name=omntractari]").val('');
+		refreshTarifTotal();
+		return false;
+	})
+	$("#work a.worktarifplus").unbind('click').click(function(){
+		$("input[name=dauneexpert]").val('');
+		$("input[name=signalexpert]").val('');
+		$("input[name=omntractari]").val('');
+		$("input[name=emite_signal]").val('');
+		if($(this).hasClass("btn-success")) {
+			$(this).removeClass('btn-success').addClass('btn-warning');refreshTarifTotal();return false;
+		}
+		$("#work a.worktarifplus").removeClass('btn-success').addClass('btn-warning');
+		$(this).removeClass('btn-warning').addClass('btn-success');
+		if($(this).attr("socid")=="dauneex") $("input[name=dauneexpert]").val('1');
+		if($(this).attr("socid")=="signalex") $("input[name=signalexpert]").val('1');
+		if($(this).attr("socid")=="omntractari") $("input[name=omntractari]").val('1');
+		if($(this).attr("socid")=="signal") $("input[name=emite_signal]").val('1');
+
+		if($("input[name=p_soc]").val()=="" || $("input[name=p_soc]").val()=="omntractari")
+		{
+			$("input[name=p_soc]").val($(this).attr("socid"));
+			if($(this).attr("socid")=="omntractari") $("input[name=omntractari]").val('2');
+		}
+		if($("input[name=p_per]").val()=="")
+			$("input[name=p_per]").val($(this).attr("per"));
+
+		refreshTarifTotal();
+		return false;
+	});
+
+	$("#work a.worktarifmarket").unbind('click').click(function(){
+
+		var categ="";
+		if($(this).attr("categ"))
+		{
+			categ=$(this).attr("categ");
+		}
+
+		if($(this).hasClass("btn-success")) {
+			$(this).removeClass('btn-success').addClass('btn-warning');
+			$(this).find(".quant").unbind('click').hide();
+
+			if(categ!="")
+			{
+				$("#work a[categ="+categ+"]").show();
+			}
+		}
+		else
+		{
+			if(categ!="")
+			{
+				$("#work a[categ="+categ+"]").hide();
+				$(this).show();
+			}
+
+			var maxq=1;
+			if($(this).attr('maxq'))
+			{
+				maxq=parseInt($(this).attr('maxq'));
+			}
+			$(this).addClass('btn-success').removeClass('btn-warning');
+			$(this).find(".quant").html("1 buc").attr("q","1").show().click(function(){
+				var q;
+				q=0+parseInt($(this).attr('q'))+1;
+				if(q>maxq)
+				{
+					q=maxq;
+				}
+				$(this).attr('q',q).html(''+$(this).attr('q')+' buc');
+				refreshTarifTotal();
+				return false;
+			});
+		}
+		refreshTarifTotal();
+		return false;
+	});
+	$("#work .clickonme").click();
+	if(!$("a.incarcatarife").length)
+	{
+		$("#loadingtarifeimg").hide();
+		$("#loadingtarifemesaj").show();
+		$("#work a.worktarif").slice(0,1).click();
+		$("#loading").hide();
+		$("#overlay").hide();
+		$("#show6luni").click();
+		$("#showXluni").click();
+	}
+	else
+	{
+		$("#loadingtarifeimg").show();
+		$("#loadingtarifemesaj").hide();
+
+	}
+}
+function refreshTarifTotal()
+{
+	var t=$("#work a.worktarif.btn-success");
+	var t2=$("#work a.worktarifplus.btn-success");
+	var t3=$("#work a.worktarifmarket.btn-success");
+	$("input[name=tarif]").val('').change();
+	if(t.length && t2.length)
+	{
+		$("input[name=tarif]").val(formatNumberJS((parseFloat(t.attr("tariff"))+parseFloat(t2.attr("tariff"))).toFixed(2),'.',',','.')).change();
+
+	}
+	else
+	if(t.length)
+	{
+		$("input[name=tarif]").val(formatNumberJS(parseFloat(t.attr("tariff")).toFixed(2),'.',',','.')).change();
+	}
+	else
+	if(t2.length)
+	{
+		$("input[name=tarif]").val(formatNumberJS(parseFloat(t2.attr("tariff")).toFixed(2),'.',',','.')).change();
+	}
+	else
+	if(t3.length)
+	{
+		var date=[];
+		var total=0;
+		t3.each(function(){
+			var q=parseInt($(this).find(".quant").attr("q"));
+			total+=q*parseFloat($(this).attr("tariff"));
+			date.push({q:q,pret:$(this).attr("tariff"),code:$(this).attr("prodid"),desc:$(this).attr("desc")});
+		});
+		$("input[name=tarif]").val(formatNumberJS(total.toFixed(2),'.',',','.')).change();
+		$("input[name=ofertadate]").val(JSON.stringify(date));
+	}
+	if($("input[name=tarif]").val()!="")
+		$("#valoare_plata").html($("input[name=tarif]").val()+' Lei');
+	else
+		$("#valoare_plata").html('');
+	return;
+}
+function openInfoPermisAuto()
+{
+	$('#alertMesaj').html('Daca proprietarul autovehiculului nu are permis de conducere, selecteaza anul in curs.');
+	$('#alertModalLabel').html('Data obtinerii permis');
+	var myModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+	myModal.show();
+	return false;
+}
+function openInfoPutere()
+{
+	$('#alertMesaj').html('<ul><li>Atentie! in cazul masinilor electrice puterea se regaseste in cartea masinii la punctul 16: puterea neta maxima;</li>'+
+'<li>Puterea motorului este importanta si se introduce exact ca in talon/carte, in kw;</li></ul>');
+	$('#alertModalLabel').html('Info Putere (Kw)');
+	var myModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+	myModal.show();
+	return false;
+}
+function openInfoDataValab()
+{
+	$('#alertMesaj').html('<ul><li> Ca exemplu, daca in RCA-ul vechi scrie ca expira pe 8 martie, pune ziua urmatoare 9 martie pentru a avea continuitate in asigurare.</li>'+
+'<li>Atentie! Conform legislatiei in vigoare nu se poate oferta/emite polite RCA cu mai mult de 60 de zile din ziua curenta.</li></ul>');
+	$('#alertModalLabel').html('Data valabilitate RCA');
+	var myModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+	myModal.show();
+	return false;
+}
+function openInfoInmatriculare()
+{
+	$('#alertMesaj').html('<ul><li>Inmatriculat la politie: autovehiculul este inmatriculat in Romania si proprietarul este cel trecut in talon</li>'+
+'<li>In vederea inmatricularii: cand cumparati un autovehicul nou sau rulat pentru a-l inmatricula</li>'+
+'<li>Inregistrat la primarie: autovehicul special care nu necesita inmatriculare la politie, ex: scuter pana in 50cc</li>'+
+'<li>In vederea inregistrarii: cand cumparati un autovehicul nou sau rulat ce indeplineste conditiile inregistrarii la primarie si nu inmatricularii</li></ul>');
+	$('#alertModalLabel').html('Stare inmatriculare vehicul');
+	var myModal = new bootstrap.Modal(document.getElementById('alertModal'), {});
+	myModal.show();
+	return false;
+}
+function openInfoCursuri()
+{
+	$('#alertMesaj').html('<h4>PREGATIRE PROFESIONALA INITIALA<br>(este OBLIGATORIE)</h4>'+
+'CUI SE ADRESEAZA ACESTE CURSURI?<br>Persoanelor care doresc sa inceapa activitatea in domeniul asigurarilor si sa obtina codul RAF, conform Normei ASF 23/2021 si care indeplinesc conditiile legale in acest sens.'+
+"<br><br>"+
+'<h4>PREGATIRE PROFESIONALA CONTINUA<br>(este OPTIONALA)</h4>'+
+'CUI SE ADRESEAZA ACESTE CURSURI?<br>Tuturor persoanelor care desfasoara activitatea de distributie de asigurari.'+
+'<br><br>'+
+'<h4>CREDITE DE PREGATIRE<br>(sunt OBLIGATORII)</h4>'+
+'CUI SE ADRESEAZA ACESTE CREDITE ?<br>Tuturor persoanelor care desfasoara activitatea de distributie de asigurari, conform Anexei 1 - Categorii de intermediari carora li se aplica prevederile pregatirii continue prin sustinerea creditelor din norma ASF 23/2021'+
+'<h4>Curs pregatire agent marketing pensii facultative pilon III</h4>'+
+'Cui se adreseaza aceste cursuri?<br>Tuturor persoanelor care desfasoara activitatea de marketing in domeniul pensiilor facultative pilon III'+
+'<br>*acest curs este furnizat de catre RITTER SERVICES SRL'+
+'<h4>Curs pregatire broker de credite</h4>'+
+'Cui se adreseaza aceste cursuri? Tuturor celor care intra in contact cu o banca, fie ca sunt persoane fizice, fie ca reprezinta o firma sau aspira la o cariera in domeniu.'+
+'<br>* acest curs este furnizat de catre RITTER SERVICES SRL'
+);
+	$('#alertModalLabel').html('Cursuri Asigurari');
+	//$('#alertModal').modal();
+
+	var myModal = new bootstrap.Modal(document.getElementById('alertModal'));
+	myModal.show();
+
+
+	return false;
+}
+function reloadSteperPolita()
+{
+	if($("a.incarcapolitaeroare").length)
+	{
+		$("#loadingpolitaimg").hide();
+		$("#loadingpolitamesaj").hide();
+		$("#loadingpolitaeroare").show();
+	}
+	else
+	if(!$("a.incarcapolita").length)
+	{
+		$("#loadingpolitaimg").hide();
+		$("#loadingpolitamesaj").show();
+		$("#loadingpolitaeroare").hide();
+	}
+	else
+	{
+		$("#loadingpolitaimg").show();
+		$("#loadingpolitamesaj").hide();
+		$("#loadingpolitaeroare").hide();
+	}
+}
+
+function countCookies()
+{
+  var pairs = document.cookie.split(";");
+  var cookies = 0;
+  for (var i=0; i<pairs.length; i++){
+    cookies++;
+  }
+  return cookies;
+  
+}
+var nomoveonwindow=true;
+function reloadSteper(slot)
+{
+	//bind calendar
+	global_cal.setReturnFunction("calendar_finished");
+	//$("#workprogress_step").animate({width:"20%"});
+	if(slot) $("div.workstep").hide();
+	loadOneStep();
+	$("a.incarcatarife").each(function(){
+		$("#soctarife").load($(this).attr("href"),function(){
+			//save offer for later usage
+						setTimeout("reloadSteper()",3300);
+			setTimeout("reloadSteperTarife()",100);
+			$("#loading").show();
+			$("#overlay").show();
+		});
+	});
+	$("div.form-group").each(function(){
+		var sel=$(this).find("select");
+		if(sel.length==1)
+		{
+			var inputs=sel.find('input[type!="hidden"]');
+			var opt=sel.find('option[value!=""]');
+			if(inputs.length==0 && opt.length==1)
+			{
+				sel.val(opt.val()).change();
+				$(this).hide();
+			}
+		}
+	});
+	$("a.incarcapolita").each(function(){
+		$("#offpolita").load($(this).attr("href"),function(){
+			setTimeout("reloadSteper()",3300);
+			setTimeout("reloadSteperPolita()",100);
+		});
+	});
+	$("a.wakeupcall").each(function(){
+		$("#wakeupcall").load($(this).attr("href"),function(){
+		});
+	});
+	$("form.autosubmitform").each(function(){
+		$(this).submit();
+	});
+	if(window.parent && window!=window.parent)
+	{
+		$("a[target]").click(function(){
+			var uri = $(this).attr("href");
+			var res = encodeURI(uri); 
+			$("#loading").hide();
+			$("#overlay").hide();
+			$("#alertModalLabel").html("Scaneaza cu mobilul pentru a vedea linkul extern");
+
+			var svgNode = QRCode({msg :uri,dim: 256,pal:['#000','#fff']});
+			$("#alertMesaj").html('<div class="mx-auto">'+svgNode.outerHTML+'</div>');
+
+			var myModal = new bootstrap.Modal(document.getElementById('alertModal'));
+			myModal.show();
+
+			return false;
+		});
+	}
+	if($("button.closealerta").click(function(){
+		localStorage['my_inchidealerta']='yes';
+		$(this).parent().remove();
+		return false;
+	}));
+	if(localStorage && localStorage['my_inchidealerta']=="yes")
+	{
+		$("button.closealerta").click();
+	}
+	else
+	{
+		$("div.alert").show('fast');
+	}
+
+	if(localStorage && localStorage['my_cookies']=="yes")
+	{
+	}
+	else
+	if(location.href.indexOf("cookies")===-1 && countCookies()>0)
+	{
+		$('#alertToastMesaj').html('Site-ul foloseste cookies pentru o buna functionare. Pentru mai multe detalii va rugam sa intrati aici: <a target=cookies href="politica-cookies">Politica cookies</a>. Inchide acest popup si accepta cookie-urile.');
+		$('#alertToastLabel').html('Accepta cookies');
+		const myToastEl = document.getElementById('toastAlert')
+		var myToast = new bootstrap.Toast(myToastEl);
+
+		myToastEl.addEventListener('hide.bs.toast', () => {
+			localStorage['my_cookies']='yes';
+		},{once:true});
+
+
+		myToast.show();
+	}
+
+}
+
+var formularecomplete=true;
+
+function checkIfInView(element)
+{
+	return;
+	if(nomoveonwindow) return;
+
+	var offset = element.offset().top - $(window).scrollTop();
+
+	if(offset > window.innerHeight)
+	{
+		$('html,body').stop().animate({scrollTop: (offset-window.innerHeight)}, 500);
+		return false;
+	}
+	return true;
+}
+function viewPDFinIFRAME(url)
+{
+    alert('<iframe src="'+url+'" title="Vizualizare PDF" class="w-100" style="height:500px;">Vizualizare PDF</iframe>',function(){      
+      });
+      $("#alertModalLabel").html("Vizualizare PDF");
+      $("#alertModal .btn-secondary").html("Am citit");
+}
+function loadBackStep()
+{
+	//ok.. move next
+	var prev=true;
+	var pos=0;
+	var prevone=false;
+	$("div.pas-formular").each(function(){
+		if($(this).is(":visible"))
+		{
+			//get next;
+			prev=false;
+			return false;
+		}
+		pos++;
+		if(prev)
+		{
+			prevone=$(this);
+		}
+		return true;
+	});
+	if(prevone)
+	{
+		$("div.pas-formular:visible").hide();
+		prevone.show();
+		//activateAnim(prevone[0],"tada");
+		if(pos==1)
+		{
+			$("#inapoibutton").addClass("disabled");
+		}
+		//prevone.filter("input:first").focus();
+		$('html, body').stop().animate({
+			scrollTop: 0//prevone.offset().top
+		}, 200);
+
+		return false;
+	}
+}
+function loadOneStep(buttonclick)
+{
+	if(buttonclick)
+	{
+		var f;
+		if($("form[name=work]").length)
+		{
+			f=$("form[name=work]")[0];
+			if(valideazaFormaPentruSalvare(f))
+			{
+				//ok.. move next
+				var next=false;
+				var actual=false;
+				var nextone=false;
+				var numbers=$("div.pas-formular").length;
+				$("div.pas-formular").each(function(){
+					numbers--;
+					if(next)
+					{
+						nextone=$(this);
+						return false;
+					}
+					if($(this).is(":visible"))
+					{
+						//get next;
+						$(this).hide();
+						actual=$(this);
+						next=true;
+					}
+					return true;
+				});
+				if(nextone)
+				{
+					nextone.show();activateAnim(nextone[0],"bounce");
+					reloadValidators("#work");
+					$("#inapoibutton").removeClass("disabled");
+					if(next && !numbers)
+					{
+						$("#inaintebutton").html($("input[name=textbutton]").val());
+					}
+
+					nextone.find(".validated").each(function(){
+						if(isElementVisible($(this)))
+						{
+							validateFieldRule($(this),{type:"change"},$(this).attr("validate"));
+						}
+					});
+
+					//nextone.filter("input:first").focus();
+					$('html, body').stop().animate({
+						scrollTop:0// nextone.offset().top
+					}, 500);
+
+
+					return false;
+				}
+				else
+				{
+					//submit
+					if(actual) actual.show();
+					if($("input[name=action]").val()!="PlataOk")
+					{
+						if(!$("#overlay").is(':visible'))
+						{
+							$("#overlay").show();
+							$("#loading").show();
+							$(f).submit();
+						}
+					}
+					return true;
+				}
+			}
+			else
+			{
+				//give an error
+				alert("Va rugam sa completati toate datele corect. Urmariti marcajele. "+lastvalidateerrors);
+				return false;
+			}
+		}
+	}
+	else
+	{
+		$("div.pas-formular").hide().slice(0,1).show().each(function(){
+			//activateAnim(this,"tada");
+			$(this).find(".validated").each(function(){
+				if(isElementVisible($(this)))
+				{
+					validateFieldRule($(this),{type:"change"},$(this).attr("validate"));
+				}
+			});
+		});
+		if($("form[name=work]").length)
+		{
+			f=$("form[name=work]")[0];
+			valideazaFormaPentruSalvare(f);
+		}
+		if($("div.pas-formular").length>1)
+		{
+			$("#inaintebutton").html("Pasul urmator");
+			$("#inapoibutton").addClass("disabled");
+		}
+		else
+		{
+			$("#inaintebutton").html($("input[name=textbutton]").val());
+			$("#inapoibutton").html('<i class="fa fa-pencil"></i>').addClass("disabled");
+		}
+		if($("input[name=action]").val()=="PlataOk")
+		{
+			$("#inaintebutton").attr("onclick","location.href='https://kit5.asiguram.ro/';return false;");
+		}
+	}
+	return true;
+}
+
+function loadOne2Step(buttonclick)
+{
+	var ret=true;
+	var allvalid=true;
+	var nextstep;
+	var foundone=false;
+
+	$("div.workstep").each(function(){
+		if($(this).attr("chvalid") && $(this).attr("chvalid")=="yes")
+		{
+			//ignore
+			return true;
+		}
+		if($(this).parent().attr("id") && !isElementVisible($(this).parent()))
+		{
+			//ignore
+			return true;
+		}
+		if(!isElementVisible($(this)) && $(this).css("display")!="block")
+		{
+			nextstep=this;
+			foundone=true;
+			return false;
+		}
+		var valid=true;
+		$(this).find(".validated").each(function(){
+			if(!validateFieldRule($(this),{},$(this).attr("validate")))
+			{
+				$(this).css("background-color", "");
+				ret=false;
+				valid=false;
+				allvalid=false;
+				if($(this).attr("name") && $(this).attr("name")!="")
+				{
+					localStorage['t_'+$(this).attr("name")]='';
+				}
+			}
+			else
+			{
+				$(this).css("background-color", "white");
+				valid=true;
+			}
+		});
+		if(valid)
+		{
+			//save all
+			$(this).attr("chvalid","yes");
+			if(typeof(Storage)!=="undefined")
+			{
+				$(this).find("input[type!=hidden]").add("select",this).each(function(){
+					if($(this).attr("name")=="tarif") return true;
+					if($(this).attr("name")=="acord_tipoferta") return true;
+					if(!$(this).attr("name")) return true;
+					if(!$(this).attr("name")=="") return true;
+					if($(this).val()=="null" || $(this).val()==null)
+					{
+						localStorage['t_'+$(this).attr("name")]='';
+					}
+					else
+					{
+												localStorage['t_'+$(this).attr("name")]=$(this).val();
+						if($(this).attr("name").substr(0,5)=="acord" && localStorage['t_'+$(this).attr("name")]=="da")
+							$(this).prop('checked', true);
+											}
+				});
+			}
+		}
+		if(!valid && !formularecomplete)
+		{
+			nextstep=this;
+			foundone=true;
+			return false;
+		}
+	});
+
+	if($("#worknext a").html()==$("input[name=textbutton]").val())
+	{
+		if(ret)
+		{
+			if($("input[name=automaticsubmit]").val()=="true" || buttonclick=="button")
+			{
+				$("#workloading").show();
+				if($("form[name=work]").submit())
+				{
+					if(isElementVisible($("#workloading")))
+					{
+						$("#worksteps").hide();
+						return false;
+					}
+				}
+			}
+			ret=false;
+		}
+		if(!ret)
+		{
+			var amafisatunmesaj=false;
+			if(buttonclick=="button")
+			{
+				if(!amafisatunmesaj && $("input[name=tarif]").length && isElementVisible($("input[name=tarif]")) && $("input[name=tarif]").val()=='')
+				{
+					setTimeout('alert("Alegeti un tarif din tabel apasand pe el.");',100);
+					amafisatunmesaj=true;
+				}
+				if(!amafisatunmesaj)
+					setTimeout('alert("Va rugam sa verificati toate campurile. Cele marcate au probleme de completare.");',100);
+				return false;
+			}
+		}
+	}
+
+	if(nextstep)
+	{
+		var mustreload=false;
+		if(!isElementVisible($(nextstep)))
+		{
+			$(nextstep).show().each(function(){
+
+				if($(this).is(":visible"))
+				{
+					$(this).find("input").unbind("change").bind("change",function(){
+						$(nextstep).attr("chvalid","");
+						loadOneStep();
+					});
+					$(this).find("select").unbind("change").bind("change",function(){
+						$(nextstep).attr("chvalid","");
+						loadOneStep();
+					});
+					checkIfInView($(this));
+				}
+			});
+		}
+		if(formularecomplete)
+			mustreload=true;
+		if(mustreload)
+		{
+			setTimeout("loadOneStep()",10);
+		}
+	}
+
+	if(!foundone)
+	{
+		$("#worknext").show();
+		$("#worknext a").html($("input[name=textbutton]").val());
+		if(allvalid && $("#worknext").length) checkIfInView($("#worknext"));
+		$("#myremedy").remove();//solves a weird chrome bug
+
+		if($("input[name=action]").val()=="PlataOk")
+		{
+			$("#worknext a").attr("onclick","return false;");
+		}
+		return false;
+	}
+	return false;
+}
+
+var helpertoast;
+function detectHelperNeeded(el)
+{
+	if($(document).width()<800)
+		return;
+
+	var toshow=false;
+	$("#mytalonhelper [ff]").removeClass("bg-warning");
+	if($(el).is(":focus"))
+	{
+		if($(el).attr("name"))
+		{
+			var tipof=$("input[name=tippferta]");
+			if($(el).attr("name")=="client" && tipof!="rca" && tipof!="casco")
+				return;
+
+			if($("#mytalonhelper [ff="+$(el).attr("name")+"]").length)
+			{
+				//hightlight field
+				toshow=true;
+				$("#mytalonhelper [ff="+$(el).attr("name")+"]").addClass("bg-warning");
+			}
+		}
+	}
+	if(toshow)
+	{
+		if(helpertoast)
+			helpertoast.show();
+		else
+		{
+			const toastLiveExample = document.getElementById('mytalonhelper')
+			helpertoast = new bootstrap.Toast(toastLiveExample);
+			helpertoast.show();
+		}
+	}
+	else
+	{
+		if(helpertoast)
+			helpertoast.hide();
+	}
+}
+
+function slotLoadingCreateWindow(slot){
+	$("#loading").show();
+}
+function reloadSideLinks()
+{
+
+	if(typeof(Storage)!=="undefined")
+	{
+		var a;
+		for(a in localStorage)
+		{
+			if(a.substr(0,4)=="link" && localStorage[a]!='no')
+			{
+				var arr=a.split("_");
+				var mya;
+				mya="index.php?t="+arr[1]+"&offid="+arr[2];
+				$("div.sidebarbutton_"+arr[1]).append('<a href="'+localStorage[a]+'">'+arr[2]+'&nbsp;</a><a href="#" onclick="localStorage['+"'"+a+"'"+']='+"'"+'no'+"'"+';$(this).prev().remove();$(this).next().remove();$(this).remove();return false;"><img width=12 src="images/x.png" border=0></a><br>');
+				//localStorage[a]='no';
+			}
+		}
+	}
+	}
+function remoteAllLinks()
+{
+	if(typeof(Storage)!=="undefined")
+	{
+		var a;
+		for(a in localStorage)
+		{
+			if(a.substr(0,4)=="link" && localStorage[a]!='no')
+			{
+				localStorage[a]='no';
+			}
+		}
+	}
+}
+
+function slotLoadedUpdateWindow(slot){
+	$("#loading").hide();
+	$("#overlay").hide();
+	$(document).trigger('slotReloaded',slot);
+	reloadAutocomplete();
+	setTimeout("nomoveonwindow=false;",10000);
+
+}
+function initializeForElements(it)
+{
+	var d;
+	for(d in it)
+	{
+		if(document.forms['work'][''+d]==undefined) continue;
+		if(document.forms['work'][''+d].type && document.forms['work'][''+d].type.toLowerCase()=="checkbox")
+		{
+			if(it[''+d]=="1")
+			{
+				document.forms['work'][''+d].checked=true;
+			}
+			else
+			{
+				document.forms['work'][''+d].checked=false;
+			}
+		}
+		else
+		if(document.forms['work'][''+d].type==undefined)
+		{
+			var ii;
+			for(ii=0;ii<document.forms['work'][''+d].length;ii++)
+			{
+
+				if(document.forms['work'][''+d][ii].value==it[''+d])
+				{
+					document.forms['work'][''+d][ii].checked=true;
+				}
+			}
+		}
+		else
+		if(document.forms['work'][''+d].type=="select-one")
+		{
+			var idx=select_findIndex($(document.forms['work'][''+d]),it[''+d]);
+			document.forms['work'][''+d].selectedIndex=idx;
+		}
+		else
+		{
+			$(document.forms['work'][''+d]).val(it[''+d]).change();
+		}
+	}
+}
+function correctHtmlDataForJS(s)
+{
+	return s.replace(/&amp;/gi, "&").replace(/&gt;/gi, ">").replace(/&lt;/gi, "<").replace(/&quot;/gi, "\"");
+}
+function reloadForDatas()
+{
+	if(window.mypreloaddata)
+	{
+		initializeForElements(window.mypreloaddata);
+		window.mypreloaddata=false;
+	}
+	if($("input[name=mylogin_id]").length)
+	{
+		$("input[name=mylogin_id]").val(localStorage['mylogin_id']);
+	}
+	if($("input[name=mylogin_key]").length)
+	{
+		$("input[name=mylogin_key]").val(localStorage['mylogin_key']);
+	}
+	if($("input[name=mylogin_auth]").length)
+	{
+		$("input[name=mylogin_auth]").val(md5(localStorage['mylogin_auth']+"-contpin-"));
+	}
+
+	if($("a.contulmeu").length)
+	{
+		if(getLocalData('mylogin_auth','')!="")
+			$("a.contulmeu").attr("href",'cont');
+		else
+		{
+			if(getLocalData('mylogin_id','')!="" && getLocalData('mylogin_key','')!="")
+				$("a.contulmeu").attr("href",'logincode');
+			else
+				$("a.contulmeu").attr("href",'loginmobil');
+		}
+	}
+	$("a.logout").click(function(){
+		setLocalData('mylogin_id','');
+		setLocalData('mylogin_key','');
+		setLocalData('mylogin_auth','');
+		location.href='https://kit5.asiguram.ro/';
+		return false;
+	});
+	$(".loadonstart").each(function(){
+		var page=this;
+				var pinrand="cb260e7a5ff4b4301f7ce891c439e7b1";
+		$.get($(this).attr("loadurl"),{
+			"mylocal_key":getLocalData('mylogin_key',''),
+			"mylocal_id":getLocalData('mylogin_id',''),
+			"time":"1759586710",
+			"pin":md5(''+pinrand+'-'+getLocalData('mylogin_auth','')+'-'+$(this).attr("loadurl")+'0'),
+			"pint":pinrand,
+			"offid":"0",
+			},function(d){
+				$(page).html(d);
+				$(page).find("a.preparecontlinks").each(function(){
+
+						var pin=md5(''+$(this).attr("pint")+'-'+getLocalData('mylogin_auth','')+'-'+$(this).attr("pinprot"));
+
+						$(this).attr("href",$(this).attr("href")+"&mylocal_id="+getLocalData('mylogin_id','')+"&mylocal_key="+getLocalData('mylogin_key','')+"&pin="+pin);
+					});
+		});
+	});
+	$("#counter").each(function(){
+		$(this).load("/stats");
+		setInterval(() => {
+			$(this).load("/stats");
+		}, 61000);
+	});
+}
+
+document.globalSlotLoading="slotLoadingCreateWindow";
+document.globalSlotReloaded="slotLoadedUpdateWindow";
+document.ajaxifyDefaultSlot="work";
+$(document).ready(function(){
+
+
+	if(getLocalData("mylogin_expireval","")=="1" && getLocalData('mylogin_auth','')!="")
+	{
+		var cs=getLocalInt("mylogin_expire","0");
+		var d = new Date();
+		var n = d.getTime();
+		if(cs+1800000<n)
+		{
+			setLocalData('mylogin_id','');
+			setLocalData('mylogin_key','');
+			setLocalData('mylogin_auth','');
+			alert("Sesiunea ta a expirat. Va rugam sa Reintrati in cont daca e nevoie.");
+		}
+		setLocalData("mylogin_expire",n);
+	}
+
+
+	reloadLinks("");
+
+	$("a.option").unbind("click");
+	initAjaxifyHistory();
+	reloadAutocomplete();
+	reloadForDatas();
+	$("#loading").hide();
+	$("#overlay").hide();
+$.fn.extend({
+	showAndScroll: function() {
+	//	$(this).show();
+	//	if( $(this).position()['top'] )
+	//	window.scrollTo(0, $(this).position()['top']);
+		return $(this).show();
+	}
+});
+reloadSteper(true);
+	var togo=getLocalData("gdpr_redirect","");
+	if(togo!="")
+	{
+		setLocalData("gdpr_redirect","");
+		location.href=togo;
+	}
+	
+$("input[name]").add("select[name]").focus(function(){
+		detectHelperNeeded(this);
+	});
+	//deteact agent
+	var agentname=getLocalData("site_agent_name","");
+	var agentraf=getLocalData("site_agent_raf","");
+	var agentphone=getLocalData("site_agent_phone","");
+	var agentemail=getLocalData("site_agent_email","");
+	if(agentname!="")
+	{
+		$('#agent-name').html(agentname+"<br>Cod RAF: "+agentraf);
+		if(agentphone!="")
+		{
+			if(agentphone.substr(0,1)=="0")
+				agentphone='+4'+agentphone;
+			$("#agent-phone").html('<i class="fa fa-phone"></i> Telefon: <a class="text-decoration-none" target="phone" href="tel:'+agentphone+'">'+agentphone+'</a>');
+			$("#broker-phone").hide();
+			$("a[target=phone]").attr("href","tel:"+agentphone).html('<i class="fa fa-phone"></i> '+agentphone);
+		}
+		else
+		{
+			$("#agent-phone").hide();
+		}
+		if(agentemail!="")
+		{
+			$("#agent-email").html('<i class="fa fa-envelope"></i> E-mail: <a class="text-decoration-none" target="email" class="nax-link" href="mailto:'+agentemail+'">'+agentemail+'</a>');
+			$("#broker-email").hide();
+		}
+		else
+		{
+			$("#agent-email").hide();
+		}
+		$("#agent_date_div").show();
+	}
+	});
+
+$(document).bind('slotReloaded',function(event,data){reloadSteper(true);});
+
+$(document).mousemove(function(e)
+{
+	$("#loading").css("top",e.pageY).css("left",e.pageX+10);
+});
+$(document).on("touchstart",function(ev)
+{
+  var i;var touch;
+  for(i=0;i<ev.touches.length;i++)
+  {
+		touch = ev.touches[i];
+		$("#loading").css("top",touch.pageY).css("left",touch.pageX+10);
+	}
+});
+
+
+function receiveDate(event)
+{
+	if(event.data.tip=="mycurs")
+	{
+		var d=event.data.data;
+		//alert(d);
+	}
+}
+window.addEventListener("message", receiveDate, false);
+
+
+$(window).on("load",function(e){
+	$("#loading").hide();
+	$("#overlay").hide();
+});
+$(window).on("error",function(e){
+	$("#loading").hide();
+	$("#overlay").hide();
+});
+$(window).on("cached",function(e){
+	$("#loading").hide();
+	$("#overlay").hide();
+});
+$(window).on("abort",function(e){
+	$("#loading").hide();
+	$("#overlay").hide();
+});
+$(window).on("unload",function(e){
+	$("#loading").hide();
+	$("#overlay").hide();
+});
+$(window).on("beforeunload",function(e)
+{
+	$("#loading").show();
+	$("#overlay").show();
+});
+
+
+function md5cycle(x, k) {
+var a = x[0], b = x[1], c = x[2], d = x[3];
+
+a = ff(a, b, c, d, k[0], 7, -680876936);
+d = ff(d, a, b, c, k[1], 12, -389564586);
+c = ff(c, d, a, b, k[2], 17,  606105819);
+b = ff(b, c, d, a, k[3], 22, -1044525330);
+a = ff(a, b, c, d, k[4], 7, -176418897);
+d = ff(d, a, b, c, k[5], 12,  1200080426);
+c = ff(c, d, a, b, k[6], 17, -1473231341);
+b = ff(b, c, d, a, k[7], 22, -45705983);
+a = ff(a, b, c, d, k[8], 7,  1770035416);
+d = ff(d, a, b, c, k[9], 12, -1958414417);
+c = ff(c, d, a, b, k[10], 17, -42063);
+b = ff(b, c, d, a, k[11], 22, -1990404162);
+a = ff(a, b, c, d, k[12], 7,  1804603682);
+d = ff(d, a, b, c, k[13], 12, -40341101);
+c = ff(c, d, a, b, k[14], 17, -1502002290);
+b = ff(b, c, d, a, k[15], 22,  1236535329);
+
+a = gg(a, b, c, d, k[1], 5, -165796510);
+d = gg(d, a, b, c, k[6], 9, -1069501632);
+c = gg(c, d, a, b, k[11], 14,  643717713);
+b = gg(b, c, d, a, k[0], 20, -373897302);
+a = gg(a, b, c, d, k[5], 5, -701558691);
+d = gg(d, a, b, c, k[10], 9,  38016083);
+c = gg(c, d, a, b, k[15], 14, -660478335);
+b = gg(b, c, d, a, k[4], 20, -405537848);
+a = gg(a, b, c, d, k[9], 5,  568446438);
+d = gg(d, a, b, c, k[14], 9, -1019803690);
+c = gg(c, d, a, b, k[3], 14, -187363961);
+b = gg(b, c, d, a, k[8], 20,  1163531501);
+a = gg(a, b, c, d, k[13], 5, -1444681467);
+d = gg(d, a, b, c, k[2], 9, -51403784);
+c = gg(c, d, a, b, k[7], 14,  1735328473);
+b = gg(b, c, d, a, k[12], 20, -1926607734);
+
+a = hh(a, b, c, d, k[5], 4, -378558);
+d = hh(d, a, b, c, k[8], 11, -2022574463);
+c = hh(c, d, a, b, k[11], 16,  1839030562);
+b = hh(b, c, d, a, k[14], 23, -35309556);
+a = hh(a, b, c, d, k[1], 4, -1530992060);
+d = hh(d, a, b, c, k[4], 11,  1272893353);
+c = hh(c, d, a, b, k[7], 16, -155497632);
+b = hh(b, c, d, a, k[10], 23, -1094730640);
+a = hh(a, b, c, d, k[13], 4,  681279174);
+d = hh(d, a, b, c, k[0], 11, -358537222);
+c = hh(c, d, a, b, k[3], 16, -722521979);
+b = hh(b, c, d, a, k[6], 23,  76029189);
+a = hh(a, b, c, d, k[9], 4, -640364487);
+d = hh(d, a, b, c, k[12], 11, -421815835);
+c = hh(c, d, a, b, k[15], 16,  530742520);
+b = hh(b, c, d, a, k[2], 23, -995338651);
+
+a = ii(a, b, c, d, k[0], 6, -198630844);
+d = ii(d, a, b, c, k[7], 10,  1126891415);
+c = ii(c, d, a, b, k[14], 15, -1416354905);
+b = ii(b, c, d, a, k[5], 21, -57434055);
+a = ii(a, b, c, d, k[12], 6,  1700485571);
+d = ii(d, a, b, c, k[3], 10, -1894986606);
+c = ii(c, d, a, b, k[10], 15, -1051523);
+b = ii(b, c, d, a, k[1], 21, -2054922799);
+a = ii(a, b, c, d, k[8], 6,  1873313359);
+d = ii(d, a, b, c, k[15], 10, -30611744);
+c = ii(c, d, a, b, k[6], 15, -1560198380);
+b = ii(b, c, d, a, k[13], 21,  1309151649);
+a = ii(a, b, c, d, k[4], 6, -145523070);
+d = ii(d, a, b, c, k[11], 10, -1120210379);
+c = ii(c, d, a, b, k[2], 15,  718787259);
+b = ii(b, c, d, a, k[9], 21, -343485551);
+
+x[0] = add32(a, x[0]);
+x[1] = add32(b, x[1]);
+x[2] = add32(c, x[2]);
+x[3] = add32(d, x[3]);
+
+}
+
+function cmn(q, a, b, x, s, t) {
+a = add32(add32(a, q), add32(x, t));
+return add32((a << s) | (a >>> (32 - s)), b);
+}
+
+function ff(a, b, c, d, x, s, t) {
+return cmn((b & c) | ((~b) & d), a, b, x, s, t);
+}
+
+function gg(a, b, c, d, x, s, t) {
+return cmn((b & d) | (c & (~d)), a, b, x, s, t);
+}
+
+function hh(a, b, c, d, x, s, t) {
+return cmn(b ^ c ^ d, a, b, x, s, t);
+}
+
+function ii(a, b, c, d, x, s, t) {
+return cmn(c ^ (b | (~d)), a, b, x, s, t);
+}
+
+function md51(s) {
+txt = '';
+var n = s.length,
+state = [1732584193, -271733879, -1732584194, 271733878], i;
+for (i=64; i<=s.length; i+=64) {
+md5cycle(state, md5blk(s.substring(i-64, i)));
+}
+s = s.substring(i-64);
+var tail = [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0];
+for (i=0; i<s.length; i++)
+tail[i>>2] |= s.charCodeAt(i) << ((i%4) << 3);
+tail[i>>2] |= 0x80 << ((i%4) << 3);
+if (i > 55) {
+md5cycle(state, tail);
+for (i=0; i<16; i++) tail[i] = 0;
+}
+tail[14] = n*8;
+md5cycle(state, tail);
+return state;
+}
+
+function md5blk(s) {
+var md5blks = [], i;
+for (i=0; i<64; i+=4) {
+md5blks[i>>2] = s.charCodeAt(i)
++ (s.charCodeAt(i+1) << 8)
++ (s.charCodeAt(i+2) << 16)
++ (s.charCodeAt(i+3) << 24);
+}
+return md5blks;
+}
+
+var hex_chr = '0123456789abcdef'.split('');
+
+function rhex(n)
+{
+var s='', j=0;
+for(; j<4; j++)
+s += hex_chr[(n >> (j * 8 + 4)) & 0x0F]
++ hex_chr[(n >> (j * 8)) & 0x0F];
+return s;
+}
+
+function hex(x) {
+for (var i=0; i<x.length; i++)
+x[i] = rhex(x[i]);
+return x.join('');
+}
+
+function add32(a, b) {
+return (a + b) & 0xFFFFFFFF;
+}
+
+function md5(s) {
+return hex(md51(s));
+}
+
+
+</script>
+    </div>
+  </div>
+</div> <!-- /container -->
+
+<div id=footerdiv>
+<div class="bs-divider mb-1 mt-1"></div>
+
+
+<!-- footer -->
+  <div class="container p-5 mb-0">
+
+    <div class="row">
+      <div class="col-12 col-md-8 col-xl-4  mt-5 mb-5">
+
+<div class="card mb-1 h-100 border-secondary card-body-tertiary">
+
+<div id="agent_date_div" style="display:none">
+<h3 id="agent-name" class="font-weight-bold card-header"></h3>
+  <div class="card-body">
+  <h5 id="agent-phone" class="card-title"><i class="fa fa-phone"></i> Telefon: <a class="text-decoration-none" target="phone" href="tel:"></a></h5>
+  <h5 id="agent-email" class="card-subtitle"><i class="fa fa-envelope"></i> E-mail: <a class="font-weight-bold text-decoration-none nax-link" target="email" href="mailto:"></a></h5>
+  <br><small>partener la </small><br><br> 
+</div>
+</div>
+
+  <h3 class="card-header font-weight-bold">Ai Software srl CONT TEST</h3>
+  <div class="card-body">
+  <hr class="dropdown-divide"></hr>
+    <div  id="broker-phone">
+      <h5 class="card-title"><i class="fa fa-phone"></i> Telefon: <a class="text-decoration-none" target="phone" href="tel:0723195961">0723195961</a></h5>
+    <hr class="dropdown-divide"></hr>
+</div>
+    <div  id="broker-email" >
+      <h5 class="card-subtitle"><i class="fa fa-envelope"></i> E-mail: <a class="font-weight-bold text-decoration-none text-bold nax-link" target="email" href="mailto:george@aisoftware.ro">george@aisoftware.ro</a></h5>
+    <hr class="dropdown-divide"></hr>
+</div>
+
+<div class="card-text" id="datebroker"><span style="font-weight: bold;">aisoftware<br>date firma<br>alte date, site email..<br></span></div>
+
+  </div>
+</div>
+
+
+      </div>
+      <div class="col-12 col-md-4 col-xl-3  mt-5  mb-5">
+        <h6 class="mt-0">Adrese utile:</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="contact"> Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="agenti"> Registru Agenti</a></li>
+          <li class="nav-item"><a class="nav-link" href="petitie"> Registru Petitii</a></li>
+          <li class="nav-item"><a class="nav-link" href="informare"> Informare GDPR</a></li>
+          <li class="nav-item"><a class="nav-link" href="dnt"> Formular DNT</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="verifica"> Verifica</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="termeni-conditii"> Termeni si conditii</a></li>
+          <li class="nav-item"><a class="nav-link" href="datepersonale"> Date personale</a></li>
+          <li class="nav-item"><a class="nav-link" href="politica-cookies"> Politica cookies</a></li>
+          <li class="nav-item"><a class="nav-link" href="securitatea-informatiei"> Politica securitatea informatiei</a></li>
+          <li class="nav-item"><a class="nav-link" href="cum-platesc"> Cum platesc?</a></li>
+          <li class="nav-item"><a class="nav-link" href="documente"> Documente utile</a></li>
+          
+                                <li class="nav-item"><a class="nav-link" href="test-sign">test sign</a></li>
+            
+        </ul>
+      </div>
+      <div class="col-12 col-md-8 col-xl-2  mt-5  mb-5">
+        <h6 class="mt-0">Ultimele stiri - <a class="text-info" href="stiri">vezi toate</a>:</h6>
+
+        <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="a-doua-stire">A doua stire <span>&nbsp;07.01.2018</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="prima-stire">Prima stire <span>&nbsp;07.01.2018</span></a></li>
+              </ul>
+      </div>
+      <div class="col-12 col-md-4 col-xl-3 mt-5  mb-5">
+        <h6 class="mt-0">Adrese externe: </h6>
+        <ul class="nav justify-content-left">
+        <li class="nav-item"> <a href="https://anpc.ro/ce-este-sal/" target="_blank" class="nav-link"><img style="width:250px" loading="lazy" src="https://lcdn.altex.ro/render/static/altex/images/footer-banners/anpc-sal.png" alt="ANPC"></a></li>
+        <li class="nav-item"> <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" target="_blank" class="nav-link"><img style="width:250px" loading="lazy" src="https://lcdn.altex.ro/render/static/altex/images/footer-banners/anpc-sol.png" alt="Solutionarea Alternativa a Litigiilor"></a></li>
+       
+               
+        <li class="nav-item"> <a href="https://www.baar.ro/asigurati-cu-risc-ridicat/" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> BAAR asigurati-cu-risc-ridicat</a></li>
+        <li class="nav-item"> <a href="https://amiabila.com/home" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> Constatare Amiabila</a></li>
+
+
+        <li class="nav-item"> <a href="https://www.e-rovinieta.ro/ro/taxa-pod-fetesti" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> Cumpara taxa de pod Fetesti</a></li>
+        <li class="nav-item"> <a href="https://www.e-rovinieta.ro/ro/e-rovinieta" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> Cumpara rovinieta</a></li>
+        <li class="nav-item"> <a href="https://www.aida.info.ro/polite-rca" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> Verificare valabilitate RCA  </a></li>
+        <li class="nav-item"> <a href="https://prog.rarom.ro/rarpol/rarpol.asp" target="_blank" class="nav-link"><i class="bi bi-box-arrow-up-right"></i> Verificare ITP </a></li>
+
+
+            <li class="nav-item"> <a href="http://google.com" target="_blank" class="nav-link">test sign2</a></li>
+            <li class="nav-item"> <a href="http://google.com" target="_blank" class="nav-link">test sign</a></li>
+      </ul>
+      </div>
+    </div>
+
+  </div>
+<!--footer start from here-->
+
+
+<div class="d-flex p-2 bg-body-tertiary card-header">
+  <div class="col-md-6 align-items-center">
+     <div class="nav justify-content-start">
+      <p class="font-italic nav-link">&copy; 2025 - Toate drepturile rezervate <span class=spanversion> (ver. 5-439)</span></p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a href="home" class="nav-link">Acasa</a></li>
+        <li class="nav-item"><a href="despre-noi" class="nav-link">Despre noi</a></li>
+        <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="all" class="nav-link">Harta site</a></li>
+        <li class="nav-item"><a target=asiguram href="http://asiguram.ro" class="nav-link text-info">Powered by asiguram.ro</a></li>
+      </ul>
+    </div>
+ </div>
+
+</div><!-- footerdiv -->
+
+<div class="modal" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" style="margin-right:auto;" id="alertModalLabel">Alerta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="alertMesaj">
+        Alerta
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 start-0 p-1">
+
+<div class="toast" id="toastAlert" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" aria-hidden="true">
+	<div class="toast-header">
+	<h3 style="margin-right:auto;" id="alertToastLabel">Info</h3>
+	<button type="button" class="btn btn-success" data-bs-dismiss="toast" aria-label="Accepta">Accepta</button>
+	</div>
+	<div class="toast-body" id="alertToastMesaj">Info</div>
+</div>
+</div>
+
+<div id=sablonopinfo style="display:none;">
+<div class="card card-danger">
+<div class="row p-2">
+    <div class="col-md-3"><b>BENEFICIAR:</b></div>
+    <div class="col-md-9"><span onclick="copyToClipboard(this)" style="cursor:pointer;">[BENEF] <i class="bi bi-clipboard"></i> </span></div>
+</div>
+<div class="row p-2">
+    <div class="col-md-3"><b>IBAN:</b></div>
+    <div class="col-md-9"><span onclick="copyToClipboard(this)" style="cursor:pointer;">[IBAN] <i class="bi bi-clipboard"></i> </span></div>
+</div>
+<div class="row p-2">
+    <div class="col-md-3"><b>SUMA:</b></div>
+    <div class="col-md-9"><span onclick="copyToClipboard(this)" style="cursor:pointer;" class="copysuma">[SUMA] <i class="bi bi-clipboard"></i> </span>
+    RON
+</div>
+</div>
+<div class="row p-2">
+    <div class="col-md-3"><b>OP:</b></div>
+    <div class="col-md-9"><span onclick="copyToClipboard(this)" style="cursor:pointer;">[TEXT] <i class="bi bi-clipboard"></i> </span></div>
+</div>
+</div>
+</div>
+
+<iframe id="mynewiframe" src="about:blank" class="iframes" style="display:none;position:fixed;top:2px;left:2px;border: solid 0px white;z-index:10000;"></iframe>
+
+
+
+
+
+<script>
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+function alert(mess,callback=undefined,paras='')
+{
+	$("#alertModalLabel").html("Mesaj de informare");
+	$("#loading").hide();
+	$("#overlay").hide();
+	$("#alertMesaj").html(mess);
+	$("#alertModal .btn-secondary").html("AM CITIT");
+
+	const myModalEl = document.getElementById('alertModal');
+	if($("myModalEl").hasClass("show")) return;
+	$(myModalEl).off();
+	if(callback)
+		$(myModalEl).on('hidden.bs.modal', event => {
+				callback(paras);
+		})
+
+	var myModal = new bootstrap.Modal(myModalEl, {});
+  	myModal.show();
+}
+function deleteAllCookies() {
+	var cookies = document.cookie.split(";");
+
+	for (var i = 0; i < cookies.length; i++) {
+		var cookie = cookies[i];
+		var eqPos = cookie.indexOf("=");
+		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+	}
+}
+
+var mysignframe;
+function receiveDate(event)
+{
+	if(event.data.tip=="date")
+	{
+		var d=event.data.data;
+		var c=event.data.control;
+		if(d!="")
+		{
+			$("#"+c).val(d).change();
+
+			/*
+			var el=document.getElementById(c+"_dd");//.parentNode.firstChild;
+			var myDropdown = bootstrap.Dropdown.getInstance(el);
+			console.log(myDropdown);
+			myDropdown.hide();
+			*/
+			
+			$("#"+c+"_dd").parent().click();
+			$("#"+c).click();
+		}
+	}
+	if(event.data.tip=="sign")
+	{
+		var d=event.data.data;
+		var c=event.data.control;
+		if(d!="")
+		{
+			$("input[name="+c+"]").val(d);
+			$("#"+c).val("Semnat OK").addClass("btn-success").change();
+			// $("#myiframeModal").modal('hide');
+			
+							mysignframe.close();
+						}
+	}
+	if(event.data.tip=="html")
+	{
+		var d=event.data.data;
+		var c=event.data.control;
+		if(d!="")
+		{
+			$("input[name="+c+"]").val(d);
+			$("#"+c).val("Continut OK").addClass("btn-success").change();
+		}
+	}
+	if(event.data.tip=="clearsession")
+	{
+		localStorage.clear();
+		deleteAllCookies();
+	}
+}
+window.addEventListener("message", receiveDate, false);
+window.addEventListener("resize", resizeModals);
+
+function valideazaSemnatura(el)
+{
+if(el.val()=="Semnat OK") return true;
+return false;
+}
+
+function correctTarifForCopy(inputString) {
+    if (typeof inputString !== 'string') {
+        return "0.00";
+    }
+
+    let cleanedString = inputString.replace(/\s/g, '');
+
+    const hasDot = cleanedString.includes('.');
+    const hasComma = cleanedString.includes(',');
+
+    let numberToParse;
+
+    if (hasDot && hasComma) {
+        const lastDotIndex = cleanedString.lastIndexOf('.');
+        const lastCommaIndex = cleanedString.lastIndexOf(',');
+
+        let isCommaDecimal = false;
+        let isDotDecimal = false;
+        if (lastCommaIndex !== -1 && (cleanedString.length - 1 - lastCommaIndex >= 1 && cleanedString.length - 1 - lastCommaIndex <= 3)) {
+            isCommaDecimal = true;
+        }
+        if (lastDotIndex !== -1 && (cleanedString.length - 1 - lastDotIndex >= 1 && cleanedString.length - 1 - lastDotIndex <= 3)) {
+            isDotDecimal = true;
+        }
+
+        if (isCommaDecimal && !isDotDecimal) {
+            numberToParse = cleanedString.replace(/\./g, '').replace(',', '.');
+        } else if (isDotDecimal && !isCommaDecimal) {
+            numberToParse = cleanedString.replace(/,/g, '');
+        } else if (isCommaDecimal && isDotDecimal) {
+            if (lastCommaIndex > lastDotIndex) {
+                numberToParse = cleanedString.replace(/\./g, '').replace(',', '.');
+            } else {
+                numberToParse = cleanedString.replace(/,/g, '');
+            }
+        } else {
+            numberToParse = cleanedString.replace(/[,.]/g, '');
+        }
+    }
+    else if (hasComma) {
+        const lastCommaIndex = cleanedString.lastIndexOf(',');
+        if (lastCommaIndex !== -1 && (cleanedString.length - 1 - lastCommaIndex >= 1 && cleanedString.length - 1 - lastCommaIndex <= 3)) {
+            numberToParse = cleanedString.replace(',', '.');
+        } else {
+            numberToParse = cleanedString.replace(/,/g, '');
+        }
+    }
+    else if (hasDot) {
+        const lastDotIndex = cleanedString.lastIndexOf('.');
+        if (lastDotIndex !== -1 && (cleanedString.length - 1 - lastDotIndex >= 1 && cleanedString.length - 1 - lastDotIndex <= 3)) {
+            numberToParse = cleanedString;
+        } else {
+            numberToParse = cleanedString.replace(/\./g, '');
+        }
+    }
+    else {
+        numberToParse = cleanedString;
+    }
+
+
+    if (numberToParse.endsWith('.') || numberToParse.endsWith(',')) {
+        numberToParse = numberToParse.slice(0, -1);
+    }
+    const parsedNumber = parseFloat(numberToParse);
+
+    if (isNaN(parsedNumber)) {
+        return "0.00";
+    }
+    return parsedNumber.toFixed(2);
+}
+function showTarifForUser(inputNumber) {
+   
+    const num = Number(inputNumber);
+
+    if (isNaN(num)) {
+        return "0,00";
+    }
+
+ 
+    const fixedNumString = num.toFixed(2);
+
+    const parts = fixedNumString.split('.');
+    let integerPart = parts[0];
+    const decimalPart = parts[1];
+
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    return `${integerPart},${decimalPart}`;
+}
+
+function refreshPlataOP()
+{
+	if(!$('[name=textop]').length) return;
+
+   var txt=$('#sablonopinfo').html();
+   txt=txt.replace('[BENEF]','Ai Software srl CONT TEST');  
+   txt=txt.replace('[IBAN]','');
+   txt=txt.replace('[SUMA]',correctTarifForCopy($('[name=tarif]').val()));
+   $('[name=tarif]').unbind("change",refreshPlataOP).bind("change",refreshPlataOP);
+   if($('[name=textop]').length)
+      txt=txt.replace('[TEXT]',$('[name=textop]').val());
+   else
+      txt=txt.replace('[TEXT]',"OFERTA 0");
+   
+   $("#infoplata_tipplata").html(txt).show();
+}
+function refreshPlataCard()
+{
+	$('[name=tarif]').unbind("change",refreshPlataCard).bind("change",refreshPlataCard);
+	$('[name=tarif]').attr("oldvalue",$('[name=tarif]').val());
+	adjustExtraComPlataCard();
+}
+function adjustExtraComPlataCard()
+{
+	}
+//reload tipplata
+$(document).ready(function(){
+	$("#infoplata_tipplata").hide();
+if($('[name=tipplata_sel]').length<=1)
+{
+ $("[name=tipplata]").val($("[name=tipplata_sel]").val());
+}
+
+$("label.btn-square").click(function(){
+  $("#infoplata_tipplata").hide();
+  $('[name=tarif]').unbind("change",refreshPlataOP);
+  $('[name=tarif]').unbind("change",refreshPlataCard);
+  if($('[name=tarif]').attr("oldvalue"))
+  {
+		$('[name=tarif]').val($('[name=tarif]').attr("oldvalue"));
+		if($("[name=tarif]").prev().is("span.badge"))
+		{
+			$("[name=tarif]").prev().html(showTarifForUser(correctTarifForCopy($('[name=tarif]').attr("oldvalue"))));
+		}
+  }
+    if($(this).prev().val()=="contact")
+  {
+   $('#inaintebutton').text('Sunt de acord');
+  }
+  else 
+  if($(this).prev().val()=="tbi")
+  {
+   $("#infoplata_tipplata").html("Valoarea ratelor, comisioanele vor fi afisate pe pagina urmatoare.").show();
+   $('#inaintebutton').text('Plateste in rate');
+  }
+  else 
+  {
+	//card
+	 	 $('#inaintebutton').text('Plateste online');
+  }
+});
+
+if($("[name=tipplata]").val()!="")
+{
+ 	$("#plata_"+$("[name=tipplata]").val()+"").prop('checked', true);
+	//$('[name=#name#]').val($(this).prev().attr('value'));
+	//$('[name=tipplata]').val($("#plata_"+$("[name=tipplata]").val()+"").prop('checked', true).attr('value'));
+}
+});
+
+function resizeModals()
+{
+	$("#mynewiframe")
+	 .css("width",''+($(window).width()-4)+'px')
+	 .css("height",''+($(window).height()-4)+'px');
+}
+
+function openSignIframe(c)
+{
+
+					mysignframe=window.open("sign.php?control="+c,'','semneaza');
+				 
+}
+
+function openHtmlIframe(c)
+{
+	window.open("htmleditor.php?control="+c,c,"");
+}
+function openMarkdownIframe(c)
+{
+	window.open("markdown.php?control="+c,c,"");
+}
+//$('#petprovdate_dd').on('show.bs.dropdown', function () {});
+var img_toresize=0;
+var img_resized=0;
+function resizeImageBefore(e,filename)
+{
+	img_toresize++;
+	$("input[name="+filename+'_resize'+"]").val('');
+	var file = e.target.files[0];
+	if(file.type && file.type.indexOf("pdf")>-1)
+	{
+		//getpdf
+	}
+	else
+	if (file.type == "image/jpeg" || file.type == "image/jpg" ||  file.type == "image/png")
+	{
+		var reader = new FileReader();  
+		reader.onload = function(readerEvent) {
+				var image = new Image();
+				image.onload = function(imageEvent) {    
+					var max_size = 1536;
+					var w = image.width;
+					var h = image.height;
+					
+					if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
+					} else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
+					
+					var oc = document.createElement('canvas');
+					oc.width = w;
+					oc.height = h;
+					var octx=oc.getContext('2d');
+
+					var p = window.pica({features:['all']});
+					p.resize(image, oc).then(function (result) {
+  return p.toBlob(result, 'image/jpeg', 0.90);
+}).then(function (blob) {
+  window.bb = blob;
+  var reader2 = new FileReader();
+
+  reader2.onload = function (imageEvent) {
+
+	var el=$("input[name="+filename+''+"]");
+	el.removeClass("validateatention");
+	el.prev().removeClass('bg-warning').find('i').removeClass("animated").removeClass("wobble");
+
+    $("input[name=" + filename + '_resize' + "]").val(imageEvent.target.result);
+    var p = $("input[name=" + filename + '' + "]").parent();
+    $("input[name=" + filename + '' + "]").remove();
+    p.append('<span class="badge bg-info">Ok, am poza</span>'); //console.log("done");
+
+
+    img_resized++;
+  };
+
+  reader2.readAsDataURL(window.bb);
+});
+
+/*
+					p.resize(image,oc).then(result => p.toBlob(result, 'image/jpeg', 0.90))
+					.then(blob => {window.bb=blob
+							var reader2 = new FileReader();
+							reader2.onload = function(imageEvent) {
+									$("input[name="+filename+'_resize'+"]").val(imageEvent.target.result);
+									var p=$("input[name="+filename+''+"]").parent();
+									$("input[name="+filename+''+"]").remove();
+									p.append('<span class="badge bg-info">Ok, am poza</span>');
+									//console.log("done");
+									img_resized++;
+							}
+							reader2.readAsDataURL(window.bb); 
+						});            
+					*/
+				};
+				
+					if(file.size>3145728)
+					{
+								image.src = readerEvent.target.result;
+
+									}
+					else
+					{
+
+						var el=$("input[name="+filename+''+"]");
+						el.removeClass("validateatention");
+						el.prev().removeClass('bg-warning').find('i').removeClass("animated").removeClass("wobble");
+
+						$("input[name="+filename+''+"]").parent().append('<span class="badge bg-info">Ok</span>');
+						//remove attension
+						$("input[name=" + filename + '' + "]").remove();
+						$("input[name=" + filename + '_resize' + "]").val(readerEvent.target.result);
+					}
+		
+						}
+		reader.readAsDataURL(file);
+	}
+	else
+	{
+		$("input[name="+filename+'_resize'+"]").val('');
+		img_resized++;
+	}
+}
+</script>
+
+<div id="overlay"></div><div id="loading" class="badge rounded text-black badge-warning bg-warning" style="max-width:40ch;">Se incarca ... asteptati</div><img src='images/loading.gif' style="position:absolute;top:-500px;max-width:20px;">
+<div id=evaluator style="position:absolute;top:-500px;left:-500px;"></div>
+<div id="notificare_plecare"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/scroll-out@latest/dist/scroll-out.min.js"></script>
+<script>
+$(document).ready(function(){
+ScrollOut({
+  targets:[".animated"],
+  threshold:0.9,
+  onShown: function(el) {
+    if(!el.classList.contains("animated")) return;
+      el.style.animation = 'none';
+      el.offsetHeight;
+      el.style.animation = null;
+  }
+});
+
+//keep parent involved
+if(window.parent && window!=window.parent)
+{
+	$("div.fb-like").hide();
+	$(window).on({'touchstart':function(){window.parent.postMessage('Imoved','*');}});
+	$(window).on({'mousemove':function(){window.parent.postMessage('Imoved','*');}});
+}
+
+});
+
+this.onpush = function(event) {
+  // From here we can write the data to IndexedDB, send it to any open
+  // windows, display a notification, etc.
+}
+
+
+if ("serviceWorker" in navigator)
+{
+  if (navigator.serviceWorker.controller)
+  {
+  }
+  else
+  {
+    navigator.serviceWorker
+      .register("manifestworker.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+	  });
+  }
+	  
+}
+
+</script>
+
+</body>
+</html>
