@@ -1,8 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Method not allowed',
+        'code'    => 'method_not_allowed',
+    ]);
     return;
 }
 
@@ -38,10 +41,10 @@ $required = [
 
 foreach ($required as $key => $value) {
     if (trim((string) $value) === '') {
-        http_response_code(422);
         echo json_encode([
             'success' => false,
             'message' => 'Missing required field: ' . $key,
+            'code'    => 'validation_error',
         ]);
         return;
     }
@@ -91,9 +94,33 @@ try {
         'idoferta' => $id,
     ]);
 } catch (Throwable $exception) {
-    http_response_code(500);
+    $isSoapFault = class_exists('SoapFault', false) && $exception instanceof SoapFault;
+
+    if ($isSoapFault) {
+        $rawMessage = trim((string) $exception->getMessage());
+        $message    = $rawMessage !== '' ? $rawMessage : 'Autentificarea la serviciul SOAP a eșuat.';
+
+        if (stripos($rawMessage, 'autent') !== false) {
+            $message = 'Autentificarea la webservice a eșuat. Verificați user/parola din config.php.';
+        }
+
+        error_log('[submitoferta] SOAP fault: ' . $rawMessage);
+
+        echo json_encode([
+            'success'    => false,
+            'message'    => $message,
+            'code'       => 'soap_fault',
+            'soap_fault' => $rawMessage,
+        ]);
+
+        return;
+    }
+
+    error_log('[submitoferta] Exception: ' . $exception->getMessage());
+
     echo json_encode([
         'success' => false,
-        'message' => $exception->getMessage(),
+        'message' => 'A apărut o eroare internă. Reîncercați sau contactați administratorul.',
+        'code'    => 'internal_error',
     ]);
 }

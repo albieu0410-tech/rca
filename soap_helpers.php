@@ -66,11 +66,29 @@ if (!function_exists('broker_client')) {
             'exceptions'   => true,
             'soap_version' => SOAP_1_1,
             'features'     => SOAP_SINGLE_ELEMENT_ARRAYS,
+            'style'        => SOAP_DOCUMENT,
+            'use'          => SOAP_LITERAL,
+            'encoding'     => 'UTF-8',
         ];
 
         if (!empty($config['ws_username'])) {
             $options['login']    = $config['ws_username'];
             $options['password'] = $config['ws_parola'] ?? '';
+        }
+
+        if (!empty($config['ws_stream_context']) && is_resource($config['ws_stream_context'])) {
+            $options['stream_context'] = $config['ws_stream_context'];
+        }
+
+        if (!empty($config['ws_brokerwsdl'])) {
+            $wsdl = $config['ws_brokerwsdl'];
+            if (!preg_match('~^https?://~i', $wsdl)) {
+                $wsdl = rtrim($config['ws_brokerurl'], '/') . '/' . ltrim($wsdl, '/');
+            }
+            $options['cache_wsdl'] = WSDL_CACHE_NONE;
+            unset($options['location'], $options['uri']);
+
+            return new SoapClient($wsdl, $options);
         }
 
         return new SoapClient(null, $options);
