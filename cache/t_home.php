@@ -324,6 +324,26 @@ function renderOptions(array $values, string $selected = ''): string
     const tarifePlaceholder = document.getElementById('tarife-placeholder');
     const loader = document.querySelector('.loader');
     const btnText = document.querySelector('.btn-text');
+    const defaultTarifeMessage = (tarifePlaceholder?.textContent || '').trim() || 'Completează formularul pentru a încărca tarifele disponibile.';
+
+    let activeOfferId = null;
+    let pollTimer = null;
+
+    function resetPolling() {
+        if (pollTimer) {
+            clearTimeout(pollTimer);
+            pollTimer = null;
+        }
+    }
+
+    function scheduleTariffRefresh(idOferta) {
+        resetPolling();
+        pollTimer = window.setTimeout(() => {
+            if (idOferta && idOferta === activeOfferId) {
+                fetchTarife(idOferta);
+            }
+        }, 2000);
+    }
 
     function showFeedback(type, message) {
         if (!feedback) return;
@@ -333,29 +353,55 @@ function renderOptions(array $values, string $selected = ''): string
     }
 
     function clearTarife(message) {
+        resetPolling();
         if (tarifeContainer) {
             tarifeContainer.innerHTML = '';
-            if (message) {
+            const text = message || defaultTarifeMessage;
+            if (text) {
                 const p = document.createElement('p');
                 p.className = 'text-muted';
-                p.textContent = message;
+                p.textContent = text;
                 tarifeContainer.appendChild(p);
             }
         }
     }
 
     async function fetchTarife(idOferta) {
-        if (!idOferta) return;
+        if (!idOferta || idOferta !== activeOfferId) {
+            return;
+        }
+
         try {
             const response = await fetch('index.php?t=tarife&id=' + encodeURIComponent(idOferta), {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest'
                 }
             });
+
+            if (!response.ok) {
+                throw new Error('Tariff endpoint responded with ' + response.status);
+            }
+
             const html = await response.text();
-            tarifeContainer.innerHTML = html;
+
+            if (idOferta !== activeOfferId) {
+                return;
+            }
+
+            if (tarifeContainer) {
+                tarifeContainer.innerHTML = html;
+            }
+
+            const finalizedHeader = response.headers.get('X-Offer-Finalized');
+            if (finalizedHeader && finalizedHeader.toLowerCase() === 'no') {
+                scheduleTariffRefresh(idOferta);
+            } else {
+                resetPolling();
+            }
         } catch (error) {
+            console.error(error);
             clearTarife('A apărut o eroare la încărcarea tarifelor.');
+            activeOfferId = null;
         }
     }
 
@@ -369,6 +415,7 @@ function renderOptions(array $values, string $selected = ''): string
         form.addEventListener('submit', async function (event) {
             event.preventDefault();
             feedback.classList.add('d-none');
+            activeOfferId = null;
             if (!form.reportValidity()) {
                 return;
             }
@@ -398,7 +445,9 @@ function renderOptions(array $values, string $selected = ''): string
                 }
 
                 showFeedback('success', 'Oferta a fost creată. ID: ' + payload.idoferta);
-                fetchTarife(payload.idoferta);
+                activeOfferId = payload.idoferta;
+                clearTarife('Se colectează tarifele...');
+                fetchTarife(activeOfferId);
             } catch (error) {
                 console.error(error);
                 showFeedback('danger', 'A apărut o eroare neprevăzută.');
@@ -411,6 +460,7 @@ function renderOptions(array $values, string $selected = ''): string
             }
         });
     }
+    clearTarife(defaultTarifeMessage);
 })();
 </script>
 </body>

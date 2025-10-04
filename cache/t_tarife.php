@@ -7,17 +7,43 @@ if ($idOferta === '') {
     return;
 }
 
+header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
+
 try {
-    $tarife = tarife_oferta($idOferta);
+    $payload = tarife_oferta($idOferta);
 } catch (Throwable $exception) {
     http_response_code(500);
     echo '<div class="alert alert-danger">' . htmlspecialchars($exception->getMessage(), ENT_QUOTES) . '</div>';
     return;
 }
 
+$finalValue = $payload['ofertafinalizata'] ?? false;
+if (is_string($finalValue)) {
+    $finalValue = strtolower($finalValue);
+    $finalized = in_array($finalValue, ['1', 'true', 'da', 'yes'], true);
+} elseif (is_numeric($finalValue)) {
+    $finalized = (int) $finalValue === 1;
+} else {
+    $finalized = (bool) $finalValue;
+}
+
+header('X-Offer-Finalized: ' . ($finalized ? 'yes' : 'no'));
+
+$tarife = $payload['tarif'] ?? [];
+
 if (empty($tarife)) {
-    echo '<div class="alert alert-warning">Nu sunt încă disponibile tarife. Reîncearcă în câteva secunde.</div>';
+    if ($finalized) {
+        echo '<div class="alert alert-warning">Nu sunt disponibile tarife pentru această ofertă.</div>';
+    } else {
+        echo '<div class="alert alert-info">Oferta este în curs de calculare. Vom reîncerca automat...</div>';
+    }
     return;
+}
+
+if (!$finalized) {
+    echo '<div class="alert alert-info">Oferta este în curs de finalizare. Tarifele pot fi provizorii.</div>';
 }
 
 foreach ($tarife as $entry) {
@@ -34,7 +60,7 @@ foreach ($tarife as $entry) {
     echo '<div class="card tariff-card border-0 shadow-sm">';
     echo '  <div class="card-body">';
     echo '      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">';
-    echo '          <div>'; 
+    echo '          <div>';
     echo '              <h3 class="h5 mb-1">' . $societate . '</h3>';
     echo '              <p class="mb-0 text-muted">Bonus-Malus 12: ' . $bm12 . ' &middot; Bonus-Malus 6: ' . $bm6 . '</p>';
     echo '          </div>';

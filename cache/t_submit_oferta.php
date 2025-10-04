@@ -14,6 +14,13 @@ $asigurat         = $_POST['asigurat'] ?? [];
 $utilizatorInput  = $_POST['utilizator'] ?? [];
 $vehicul          = $_POST['vehicul'] ?? [];
 
+if ($datavalabilitate !== '') {
+    $timestamp = strtotime($datavalabilitate);
+    if ($timestamp !== false) {
+        $datavalabilitate = date('Y-m-d', $timestamp);
+    }
+}
+
 $required = [
     'datavalabilitate' => $datavalabilitate,
     'tipcontract'      => $tipcontract,
