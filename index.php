@@ -1,59 +1,95 @@
 <?php
-// index.php — minimal front controller for the kit
-error_reporting(E_ALL); ini_set('display_errors', 1);
+/**
+ * Minimal front controller that mimics the structure of the official kit.
+ */
+
+declare(strict_types=1);
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 
 $ROOT = __DIR__;
-require $ROOT.'/config.php';
 
-function include_if($f){ if(is_file($f)){ include $f; return true; } return false; }
+require_once $ROOT . '/config.php';
+require_once $ROOT . '/soap_helpers.php';
 
-// ROUTING
-$t = $_GET['t'] ?? '';
-$admin = ['theme','addpage','addlink','expirations','medical','contact','agents','petitions'];
+/**
+ * Includes a PHP file if it exists.
+ */
+function include_if(string $file): bool
+{
+    if (is_file($file)) {
+        include $file;
+        return true;
+    }
 
-if (in_array($t, $admin, true)) {
-    // ask for PIN
+    return false;
+}
+
+$t = $_GET['t'] ?? 'home';
+$slug = preg_replace('~[^a-z0-9_-]+~i', '', $t);
+
+$adminPages = [
+    'theme',
+    'addpage',
+    'addlink',
+    'expirations',
+    'medical',
+    'contact',
+    'agents',
+    'petitions',
+];
+
+if (in_array($slug, $adminPages, true)) {
     if (empty($_SESSION['__sitepin_ok'])) {
-        if (!empty($_POST['pin']) && isset($_CONFIG['sitepin']) && $_POST['pin'] === $_CONFIG['sitepin']) {
+        $pinFromConfig = $_CONFIG['sitepin'] ?? '';
+        $submittedPin   = $_POST['pin'] ?? '';
+
+        if ($pinFromConfig === '') {
+            $_SESSION['__sitepin_ok'] = true;
+        } elseif (hash_equals($pinFromConfig, $submittedPin)) {
             $_SESSION['__sitepin_ok'] = true;
         } else {
-            echo '<!doctype html><meta charset="utf-8"><title>PIN</title>
-                  <h2>Administrator access</h2>
-                  <form method="post"><input type="password" name="pin" placeholder="PIN">
-                  <button>Login</button></form>';
+            include $ROOT . '/templates/pin-form.php';
             exit;
         }
     }
-    // hand off to cache/ then extensions/
-    $candidates = [
-        "$ROOT/cache/t_$t.php",
-        "$ROOT/extensions/t_$t.php"
-    ];
-    foreach ($candidates as $f) if (include_if($f)) exit;
+
+    foreach (["$ROOT/cache/t_$slug.php", "$ROOT/extensions/t_$slug.php"] as $candidate) {
+        if (include_if($candidate)) {
+            exit;
+        }
+    }
 
     http_response_code(404);
-    echo "<h1>$t</h1><p>No handler in <code>cache/</code> or <code>extensions/</code>.</p>";
+    echo "<h1>Missing admin handler</h1><p>No template for <code>$slug</code>.</p>";
     exit;
 }
 
-// PUBLIC: default page
-if ($t === '' || $t === 'home') {
-    $kiturl = rtrim($_CONFIG['kiturl'] ?? '/', '/') . '/';
-    echo "<!doctype html><meta charset='utf-8'><title>ariguram</title>
-          <h1>Kit front page</h1>
-          <ul>
-            <li><a href='index.php?t=theme'>Theme (admin)</a></li>
-            <li><a href='index.php?t=addpage'>Add Page (admin)</a></li>
-            <li><a href='index.php?t=addlink'>Add Link (admin)</a></li>
-          </ul>";
+if ($slug === '' || $slug === 'home') {
+    include $ROOT . '/cache/t_home.php';
     exit;
 }
 
-// catch-all: try an override by slug (cache/t_{slug}.php)
-$slug = preg_replace('~[^a-z0-9_-]+~i','', $t);
-if ($slug && include_if("$ROOT/cache/t_$slug.php")) exit;
+// Dedicated public handlers
+$specialHandlers = [
+    'tarife'       => "$ROOT/cache/t_tarife.php",
+    'submitoferta' => "$ROOT/cache/t_submit_oferta.php",
+];
 
-// 404
+if (isset($specialHandlers[$slug]) && include_if($specialHandlers[$slug])) {
+    exit;
+}
+
+if ($slug !== '' && include_if("$ROOT/cache/t_$slug.php")) {
+    exit;
+}
+
+if ($slug !== '' && include_if("$ROOT/extensions/t_$slug.php")) {
+    exit;
+}
+
 http_response_code(404);
-echo "<!doctype html><meta charset='utf-8'><title>404</title><h1>Not Found</h1>";
+include $ROOT . '/templates/404.php';
